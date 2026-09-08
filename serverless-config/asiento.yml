@@ -1,0 +1,59 @@
+perfil-asientos-create:
+  handler: services/perfiles/asientos/create.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Crea un asiento contable manual (valida debe=haber y cuentas postables)"
+  events:
+    - httpApi:
+        method: POST
+        path: /perfiles/{profileId}/asientos
+        authorizer: cognitoAuthorizer
+
+perfil-asientos-getAll:
+  handler: services/perfiles/asientos/getAll.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Lista los asientos contables de una empresa"
+  events:
+    - httpApi:
+        method: GET
+        path: /perfiles/{profileId}/asientos
+        authorizer: cognitoAuthorizer
+
+perfil-asientos-get:
+  handler: services/perfiles/asientos/get.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Obtiene un asiento contable con sus líneas"
+  events:
+    - httpApi:
+        method: GET
+        path: /perfiles/{profileId}/asientos/{id}
+        authorizer: cognitoAuthorizer
+
+perfil-asientos-update:
+  handler: services/perfiles/asientos/update.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Actualiza la fecha/descripción de un asiento contable (no sus líneas)"
+  events:
+    - httpApi:
+        method: PATCH
+        path: /perfiles/{profileId}/asientos/{id}
+        authorizer: cognitoAuthorizer
+
+perfil-asientos-delete:
+  handler: services/perfiles/asientos/delete.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Elimina un asiento contable y sus líneas"
+  events:
+    - httpApi:
+        method: DELETE
+        path: /perfiles/{profileId}/asientos/{id}
+        authorizer: cognitoAuthorizer

@@ -1,0 +1,6 @@
+/vendor
+/.serverless
+/node_modules
+.env.local
+.env.prod.local
+.vendor-layer-arn

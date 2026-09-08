@@ -1,0 +1,34 @@
+mayor-upgrade:
+  handler: services/mayor/upgrade.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Mayoriza una línea de asiento en la cuenta hoja y sus ancestros por prefijo de código"
+  events:
+    - sqs:
+        arn: !GetAtt MayorQueue.Arn
+        batchSize: 1
+
+perfil-mayor-getAll:
+  handler: services/perfiles/mayor/getAll.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Lista los movimientos del mayor de una cuenta contable"
+  events:
+    - httpApi:
+        method: GET
+        path: /perfiles/{profileId}/mayor
+        authorizer: cognitoAuthorizer
+
+perfil-mayor-get:
+  handler: services/perfiles/mayor/get.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Obtiene el movimiento del mayor de una cuenta en un año/mes puntual"
+  events:
+    - httpApi:
+        method: GET
+        path: /perfiles/{profileId}/mayor/{cuentaId}/{anio}/{mes}
+        authorizer: cognitoAuthorizer

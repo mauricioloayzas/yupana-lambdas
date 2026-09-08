@@ -1,0 +1,9 @@
+{
+  "name": "yupana",
+  "scripts": {
+    "build:layer": "bash scripts/build-layer.sh",
+    "deploy:dev": "bash -c 'set -a && . .env.local && set +a && export STAGE=dev && bash scripts/build-layer.sh && serverless deploy --stage dev'",
+    "deploy:demo": "bash -c 'set -a && . .env.local && set +a && export STAGE=demo && bash scripts/build-layer.sh && serverless deploy --stage demo'",
+    "deploy:prod": "bash -c 'set -a && . .env.prod.local && set +a && export STAGE=prod && bash scripts/build-layer.sh && serverless deploy --stage prod'"
+  }
+}

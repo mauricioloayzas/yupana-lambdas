@@ -1,0 +1,59 @@
+perfil-cuentas-init:
+  handler: services/perfiles/cuentas/init.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Clona el catálogo NIIF hacia una empresa (idempotente)"
+  events:
+    - httpApi:
+        method: POST
+        path: /perfiles/{profileId}/cuentas/init
+        authorizer: cognitoAuthorizer
+
+perfil-cuentas-getAll:
+  handler: services/perfiles/cuentas/getAll.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Lista las cuentas contables de una empresa"
+  events:
+    - httpApi:
+        method: GET
+        path: /perfiles/{profileId}/cuentas
+        authorizer: cognitoAuthorizer
+
+perfil-cuentas-get:
+  handler: services/perfiles/cuentas/get.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Obtiene una cuenta contable de una empresa"
+  events:
+    - httpApi:
+        method: GET
+        path: /perfiles/{profileId}/cuentas/{id}
+        authorizer: cognitoAuthorizer
+
+perfil-cuentas-update:
+  handler: services/perfiles/cuentas/update.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Actualiza nombre/descripción de una cuenta contable de una empresa"
+  events:
+    - httpApi:
+        method: PATCH
+        path: /perfiles/{profileId}/cuentas/{id}
+        authorizer: cognitoAuthorizer
+
+perfil-cuentas-updateStatus:
+  handler: services/perfiles/cuentas/updateStatus.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Activa/inactiva una cuenta contable de una empresa"
+  events:
+    - httpApi:
+        method: PATCH
+        path: /perfiles/{profileId}/cuentas/{id}/status
+        authorizer: cognitoAuthorizer

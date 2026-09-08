@@ -1,0 +1,11 @@
+test-connection:
+  handler: services/test/connection.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Valida la conexión a DynamoDB"
+  architecture: x86_64
+  events:
+    - httpApi:
+        method: GET
+        path: /test-runtime

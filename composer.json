@@ -1,0 +1,26 @@
+{
+  "name": "yupana/backend",
+  "description": "Microservices serverless with Bref and DynamoDB to manage NIIF accounting (libro diario, mayor, plan de cuentas) for Clichín companies",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+      {
+          "type": "vcs",
+          "url": "git@github.com:mauricioloayzas/bob-construye.git"
+      }
+  ],
+  "require": {
+    "php": ">=8.4",
+    "bref/bref": "^3.0",
+    "aws/aws-sdk-php": "^3.200",
+    "ramsey/uuid": "^4.9",
+    "vlucas/phpdotenv": "^5.6",
+    "guzzlehttp/guzzle": "^7.10",
+    "mauricioloayzas/bob-construye": "^1.79"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\Common\\": "package/Common/src/"
+    }
+  }
+}

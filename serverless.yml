@@ -1,0 +1,110 @@
+service: yupana
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: provided.al2023
+  versionFunctions: false
+
+  environment:
+    STAGE: ${opt:stage, 'dev'}
+    DYNAMODB_TABLE_PREFIX_YUPANA: yupana
+    DYNAMODB_TABLE_PREFIX_ORCHESTRATOR: orchestrator
+
+    DYNAMODB_TABLE_PROFILES: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_ORCHESTRATOR}_profiles
+    DYNAMODB_TABLE_RBACS: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_ORCHESTRATOR}_profiles_rbacs
+
+    DYNAMODB_TABLE_CUENTAS: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_YUPANA}_cuentas
+    DYNAMODB_TABLE_CUENTAS_PROFILES: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_YUPANA}_cuentas_profiles
+    DYNAMODB_TABLE_ASIENTOS: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_YUPANA}_asientos
+    DYNAMODB_TABLE_ASIENTOS_DETALLES: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_YUPANA}_asientos_detalles
+    DYNAMODB_TABLE_MAYOR: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_YUPANA}_mayor
+
+    SQS_MAYOR_URL: !Ref MayorQueue
+
+    BREF_AUTOLOAD_PATH: /var/task/package/autoload.php
+
+    COGNITO_USER_POOL_ID: ${env:COGNITO_USER_POOL_ID}
+    COGNITO_CLIENT_ID: ${env:COGNITO_CLIENT_ID}
+    COGNITO_CLIENT_SECRET: ${env:COGNITO_CLIENT_SECRET}
+
+  httpApi:
+    cors:
+      allowedOrigins:
+        - '*'
+      allowedHeaders:
+        - Content-Type
+        - Authorization
+        - X-Amz-Date
+        - X-Api-Key
+        - X-Amz-Security-Token
+      allowedMethods:
+        - OPTIONS
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+    authorizers:
+      cognitoAuthorizer:
+        type: jwt
+        identitySource: $request.header.Authorization
+        issuerUrl: !Sub https://cognito-idp.${aws:region}.amazonaws.com/${self:provider.environment.COGNITO_USER_POOL_ID}
+        audience:
+          - ${self:provider.environment.COGNITO_CLIENT_ID}
+
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - dynamodb:DescribeTable
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+            - sqs:SendMessage
+          Resource:
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_PROFILES}"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_RBACS}"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_RBACS}/index/user_id-index"
+
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_CUENTAS}"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_CUENTAS_PROFILES}"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_CUENTAS_PROFILES}/index/profile_id-index"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_ASIENTOS}"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_ASIENTOS}/index/profile_id-index"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_ASIENTOS_DETALLES}"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_ASIENTOS_DETALLES}/index/asiento_id-index"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_MAYOR}"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_MAYOR}/index/cuenta_id-index"
+            - !GetAtt MayorQueue.Arn
+
+plugins:
+    - ./vendor/bref/bref
+
+custom:
+  vendorLayerArn: ${file(.vendor-layer-arn)}
+
+package:
+  patterns:
+    - '!**'
+    - 'services/**'
+    - 'package/**'
+
+functions:
+  - ${file(serverless-config/cuenta.yml)}
+  - ${file(serverless-config/perfil-cuenta.yml)}
+  - ${file(serverless-config/asiento.yml)}
+  - ${file(serverless-config/mayor.yml)}
+  - ${file(serverless-config/test.yml)}
+
+resources:
+  Resources:
+    MayorQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: ${self:provider.environment.STAGE}-yupana-mayor-queue
+        VisibilityTimeout: 50
