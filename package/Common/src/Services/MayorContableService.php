@@ -7,78 +7,68 @@ use App\Common\Repositories\MayorContableRepository;
 
 /**
  * Mayorización: postea una línea (cuenta_id, debe, haber, anio, mes) en la
- * cuenta hoja y en cada uno de sus ancestros. A diferencia de personal-finances
- * (que usa explode(".", $code), pensado para códigos con separador), el plan
- * NIIF usa códigos numéricos sin separador ("1", "101", "10101", "1010201",
- * "101020501"...) donde la jerarquía es por PREFIJO de string — así que se
- * camina hacia arriba probando prefijos decrecientes contra un mapa
- * codigo => cuenta cargado una sola vez, y se postea en cada prefijo que
- * exista realmente como cuenta del perfil (sin asumir profundidad fija).
+ * cuenta hoja y en cada uno de sus ancestros, caminando la cadena parent_id
+ * (calculada una vez al clonar/crear cada cuenta — ver CuentaContableInitService)
+ * en vez de re-derivar ancestros por prefijo de código escaneando todas las
+ * cuentas del perfil en cada posteo.
+ *
+ * Tanto el movimiento mensual (MayorContableRepository::acumular) como el saldo
+ * "en caliente" de la cuenta (CuentaContableProfileRepository::incrementarSaldo)
+ * se actualizan con operaciones atómicas de DynamoDB (ADD), sin leer primero el
+ * valor actual — corrige un bug real de personal-finances (del que este backend
+ * partió): ahí, cada posteo LEÍA el saldo del mes tocado y SOBREESCRIBÍA el
+ * saldo "en caliente" de la cuenta con ese valor, en vez de acumular sobre el
+ * histórico completo — así que el saldo visible de una cuenta terminaba
+ * reflejando solo el mes más recientemente posteado, no el saldo real desde el
+ * inicio. Además, ese patrón de "leer, calcular en PHP, sobreescribir" tiene
+ * condición de carrera si dos posteos a la misma cuenta llegan casi al mismo
+ * tiempo (se puede perder uno de los dos incrementos); con ADD, DynamoDB
+ * resuelve el incremento del lado del servidor, así que no hay ese riesgo.
  */
 class MayorContableService
 {
     public function process(array $data): array
     {
         $cuentaProfileRepo = new CuentaContableProfileRepository();
+        $mayorRepo = new MayorContableRepository();
 
         $cuentaHoja = $cuentaProfileRepo->get($data['cuenta_id']);
         if (!$cuentaHoja) {
             throw new \Exception("Cuenta {$data['cuenta_id']} no encontrada.");
         }
 
-        $resultado = $this->ledgerProcess($data, $data['cuenta_id']);
+        $debe = (float)$data['debe'];
+        $haber = (float)$data['haber'];
+        $anio = (string)$data['anio'];
+        $mes = (string)$data['mes'];
 
-        $todasLasCuentas = $cuentaProfileRepo->getByProfileId($cuentaHoja->profile_id);
-        $mapaPorCodigo = [];
-        foreach ($todasLasCuentas as $cuenta) {
-            $mapaPorCodigo[$cuenta->codigo] = $cuenta;
-        }
+        $resultado = $this->postear($cuentaHoja->id, $anio, $mes, $debe, $haber, $mayorRepo, $cuentaProfileRepo);
 
-        $codigo = $cuentaHoja->codigo;
-        for ($longitud = strlen($codigo) - 1; $longitud >= 1; $longitud--) {
-            $prefijo = substr($codigo, 0, $longitud);
-            if (isset($mapaPorCodigo[$prefijo])) {
-                $this->ledgerProcess($data, $mapaPorCodigo[$prefijo]->id);
+        $actual = $cuentaHoja;
+        $visitados = [$actual->id => true]; // guarda contra un parent_id mal cargado que formara un ciclo
+        while ($actual->parent_id !== null && !isset($visitados[$actual->parent_id])) {
+            $actual = $cuentaProfileRepo->get($actual->parent_id);
+            if (!$actual) {
+                break;
             }
+            $visitados[$actual->id] = true;
+            $this->postear($actual->id, $anio, $mes, $debe, $haber, $mayorRepo, $cuentaProfileRepo);
         }
 
         return $resultado;
     }
 
-    private function ledgerProcess(array $data, string $cuentaId): array
-    {
-        $mayorRepo = new MayorContableRepository();
-        $cuentaProfileRepo = new CuentaContableProfileRepository();
-
-        $debe = (float)$data['debe'];
-        $haber = (float)$data['haber'];
-        $anio = $data['anio'];
-        $mes = $data['mes'];
-
-        $existente = $mayorRepo->findByCuentaIdAnioMes($cuentaId, $anio, $mes);
-
-        if ($existente) {
-            $nuevoDebe = $existente->debe + $debe;
-            $nuevoHaber = $existente->haber + $haber;
-            $nuevoSaldo = $nuevoDebe - $nuevoHaber;
-
-            $movimiento = $mayorRepo->update($existente->id, [
-                'debe'  => $nuevoDebe,
-                'haber' => $nuevoHaber,
-                'saldo' => $nuevoSaldo,
-            ]);
-        } else {
-            $movimiento = $mayorRepo->create([
-                'cuenta_id' => $cuentaId,
-                'debe'      => $debe,
-                'haber'     => $haber,
-                'saldo'     => $debe - $haber,
-                'anio'      => $anio,
-                'mes'       => $mes,
-            ]);
-        }
-
-        $cuentaProfileRepo->update($cuentaId, ['saldo' => $movimiento->saldo]);
+    private function postear(
+        string $cuentaId,
+        string $anio,
+        string $mes,
+        float $debe,
+        float $haber,
+        MayorContableRepository $mayorRepo,
+        CuentaContableProfileRepository $cuentaProfileRepo
+    ): array {
+        $movimiento = $mayorRepo->acumular($cuentaId, $anio, $mes, $debe, $haber);
+        $cuentaProfileRepo->incrementarSaldo($cuentaId, $debe - $haber);
 
         return $movimiento->toArray();
     }

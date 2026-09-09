@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0986bc0b5f33a3ae0a9119bde5e2f60c",
+    "content-hash": "b3cf7aa94da4fefc1dfbd5c0013995b6",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -795,16 +795,16 @@
         },
         {
             "name": "mauricioloayzas/bob-construye",
-            "version": "v1.80",
+            "version": "v1.81",
             "source": {
                 "type": "git",
                 "url": "git@github.com:mauricioloayzas/bob-construye.git",
-                "reference": "ad78cd998ab0ec0f2f9e3a35deaa9dead5fb8b72"
+                "reference": "e3442a9dbca01ada279c33f29c50170bc779cd46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mauricioloayzas/bob-construye/zipball/ad78cd998ab0ec0f2f9e3a35deaa9dead5fb8b72",
-                "reference": "ad78cd998ab0ec0f2f9e3a35deaa9dead5fb8b72",
+                "url": "https://api.github.com/repos/mauricioloayzas/bob-construye/zipball/e3442a9dbca01ada279c33f29c50170bc779cd46",
+                "reference": "e3442a9dbca01ada279c33f29c50170bc779cd46",
                 "shasum": ""
             },
             "require": {
@@ -832,10 +832,10 @@
             ],
             "description": "Una librería base para gestionar el ambiente AWS de proyectos en mauloasan",
             "support": {
-                "source": "https://github.com/mauricioloayzas/bob-construye/tree/v1.80",
+                "source": "https://github.com/mauricioloayzas/bob-construye/tree/v1.81",
                 "issues": "https://github.com/mauricioloayzas/bob-construye/issues"
             },
-            "time": "2026-09-09T00:03:18+00:00"
+            "time": "2026-09-09T21:50:23+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",

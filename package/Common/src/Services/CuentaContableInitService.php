@@ -28,9 +28,18 @@ class CuentaContableInitService
 
         $cuentasBase = PlanCuentasNiifProvider::cuentas();
 
+        // El JSON ya viene en el mismo orden que el PDF oficial: cada cuenta
+        // aparece después de su padre (ej. "1" antes de "101" antes de "10101").
+        // Aprovechando eso, en una sola pasada se puede resolver el parent_id de
+        // cada cuenta contra las que ya se fueron creando, sin una segunda vuelta.
+        $idPorCodigo = [];
         $creadas = 0;
+
         foreach ($cuentasBase as $cuenta) {
-            $profileRepo->create($cuenta, $profileId);
+            $parentId = $this->buscarParentId($cuenta['codigo'], $idPorCodigo);
+
+            $creada = $profileRepo->create([...$cuenta, 'parent_id' => $parentId], $profileId);
+            $idPorCodigo[$cuenta['codigo']] = $creada->id;
             $creadas++;
         }
 
@@ -40,5 +49,21 @@ class CuentaContableInitService
             'cuentas' => $creadas,
             'success' => $creadas === count($cuentasBase),
         ];
+    }
+
+    /**
+     * Prefijo más largo de $codigo que ya exista en $idPorCodigo (las cuentas
+     * creadas hasta este punto de la pasada) — es el padre inmediato.
+     */
+    private function buscarParentId(string $codigo, array $idPorCodigo): ?string
+    {
+        for ($longitud = strlen($codigo) - 1; $longitud >= 1; $longitud--) {
+            $prefijo = substr($codigo, 0, $longitud);
+            if (isset($idPorCodigo[$prefijo])) {
+                return $idPorCodigo[$prefijo];
+            }
+        }
+
+        return null;
     }
 }

@@ -37,6 +37,7 @@ class CuentaContableProfileRepository
             'es_detalle'  => (bool)($data['es_detalle'] ?? false),
             'saldo'       => 0.0,
             'descripcion' => $data['descripcion'] ?? '',
+            'parent_id'   => $data['parent_id'] ?? null,
             'created_at'  => date('c'),
             'updated_at'  => null,
         ];
@@ -103,6 +104,26 @@ class CuentaContableProfileRepository
         }
 
         return CuentaContableProfileEntity::fromArray($this->marshaler->unmarshalItem(reset($result['Items'])));
+    }
+
+    /**
+     * Incrementa (o decrementa, con delta negativo) el saldo "en caliente" de
+     * una cuenta de forma atómica (DynamoDB ADD) — a diferencia de leer el
+     * saldo actual y sobreescribirlo con uno nuevo calculado en PHP, esto no
+     * tiene condición de carrera si dos posteos a la misma cuenta llegan casi
+     * al mismo tiempo (ver MayorContableService, que es quien la usa).
+     */
+    public function incrementarSaldo(string $id, float $delta): void
+    {
+        $this->dbClient->updateItem([
+            'TableName'                 => $this->tableName,
+            'Key'                       => $this->marshaler->marshalItem(['id' => $id]),
+            'UpdateExpression'          => 'ADD saldo :delta SET updated_at = :updated_at',
+            'ExpressionAttributeValues' => $this->marshaler->marshalItem([
+                ':delta'      => $delta,
+                ':updated_at' => date('c'),
+            ]),
+        ]);
     }
 
     public function update(string $id, array $data): ?CuentaContableProfileEntity
