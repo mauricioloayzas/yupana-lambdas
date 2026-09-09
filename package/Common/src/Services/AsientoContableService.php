@@ -16,6 +16,43 @@ use Exception;
  */
 class AsientoContableService
 {
+    /**
+     * Igual que crearAsiento(), pero las líneas vienen con `codigo` (código NIIF,
+     * ej. "10101") en vez de `cuenta_id` — así un backend externo (caja-registradora,
+     * apotheca) puede pedir un asiento sin conocer los UUID internos de esta
+     * empresa en Yupana, solo los códigos del plan de cuentas.
+     *
+     * @param array{fecha:string, descripcion:string, origen?:string, entries: array<int, array{codigo:string, debe?:float, haber?:float}>} $data
+     */
+    public function crearAsientoPorCodigo(string $profileId, array $data): array
+    {
+        $cuentaRepo = new CuentaContableProfileRepository();
+        $entries = $data['entries'] ?? [];
+
+        $entriesResueltas = [];
+        foreach ($entries as $entry) {
+            $codigo = $entry['codigo'] ?? null;
+            if (!$codigo) {
+                throw new Exception('Cada línea debe indicar codigo.');
+            }
+
+            $cuenta = $cuentaRepo->getByProfileIdAndCodigo($profileId, $codigo);
+            if (!$cuenta) {
+                throw new Exception("No existe la cuenta '$codigo' en esta empresa.");
+            }
+
+            $entriesResueltas[] = [
+                'cuenta_id' => $cuenta->id,
+                'debe'      => $entry['debe'] ?? 0,
+                'haber'     => $entry['haber'] ?? 0,
+            ];
+        }
+
+        $data['entries'] = $entriesResueltas;
+
+        return $this->crearAsiento($profileId, $data);
+    }
+
     public function crearAsiento(string $profileId, array $data): array
     {
         $entries = $data['entries'] ?? [];

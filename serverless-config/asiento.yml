@@ -1,3 +1,14 @@
+internal-perfiles-asientos:
+  handler: services/internal/perfiles/asientos.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Crea un asiento por códigos NIIF (backend-a-backend, X-Api-Key) — venta/compra/backfill"
+  events:
+    - httpApi:
+        method: POST
+        path: /internal/perfiles/{profileId}/asientos
+
 perfil-asientos-create:
   handler: services/perfiles/asientos/create.php
   runtime: php-84

@@ -27,6 +27,17 @@ provider:
     COGNITO_CLIENT_ID: ${env:COGNITO_CLIENT_ID}
     COGNITO_CLIENT_SECRET: ${env:COGNITO_CLIENT_SECRET}
 
+    # Secreto que este backend exige (X-Api-Key) a quien llame /internal/*
+    # (caja-registradora al autorizar una factura, apotheca al registrar una compra).
+    YUPANA_API_KEY: ${env:YUPANA_API_KEY, ''}
+
+    # Para el backfill al activar Contabilidad (CuentaContableInitService): consulta
+    # valor de inventario y ventas históricas de otros backends.
+    APOTHECA_API_BASE: ${env:APOTHECA_API_BASE, ''}
+    APOTHECA_API_KEY: ${env:APOTHECA_API_KEY, ''}
+    CAJA_REGISTRADORA_API_BASE: ${env:CAJA_REGISTRADORA_API_BASE, ''}
+    CAJA_REGISTRADORA_API_KEY: ${env:CAJA_REGISTRADORA_API_KEY, ''}
+
   httpApi:
     cors:
       allowedOrigins:
