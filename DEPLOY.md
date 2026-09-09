@@ -4,7 +4,14 @@ Guía paso a paso para poner en funcionamiento el backend de contabilidad NIIF.
 Todo se corre desde `yupana/backend`, salvo donde se indique lo contrario.
 Asumo que ya tenés `bob-contruye` clonado como hermano de este proyecto (en
 `../../bob-contruye`, como los demás backends) y con tus últimos cambios
-locales (las entidades/DDL de Yupana ya están ahí, tag `v1.79`).
+locales (las entidades/DDL de Yupana ya están ahí, tag `v1.80`).
+
+El plan de cuentas NIIF **no** vive en una tabla de DynamoDB — va bundleado
+como JSON dentro del propio deploy (`package/Common/src/Data/plan-cuentas-niif.json`,
+353 cuentas). Es dato de referencia estático, no operativo: se corrige con un
+commit + deploy si hace falta, no con un seed manual aparte. Eso significa que
+acá **no hay paso de "sembrar el catálogo"** — cada ambiente queda listo apenas
+se despliega.
 
 ## 0. Prerrequisitos (una sola vez)
 
@@ -37,17 +44,17 @@ Estos dos archivos están en `.gitignore`, no se commitean.
 composer install
 ```
 
-Esto trae `vendor/bref/bref` (el plugin de serverless.yml lo necesita local,
-aunque en Lambda el código realmente corre desde el layer compartido) y las
-librerías que usa `commands/cuentaCommand.php` (Guzzle).
+Trae `vendor/bref/bref` (el plugin de serverless.yml lo necesita local, aunque
+en Lambda el código corre desde el layer compartido).
 
-## 3. Crear las tablas de DynamoDB — DEV
+## 3. Crear la tabla de DynamoDB — DEV
 
-Desde `bob-contruye/` (no desde `yupana/backend/`):
+Solo hay **una** tabla real (el clon de cuentas por empresa; las de
+asientos/detalles/mayor son las otras cuatro). Desde `bob-contruye/` (no desde
+`yupana/backend/`):
 
 ```bash
 cd ../../bob-contruye
-php dev-scripts/DynamoDB/DDL/cuentaContableTable.php --environment dev --prefix yupana
 php dev-scripts/DynamoDB/DDL/cuentaContableProfileTable.php --environment dev --prefix yupana
 php dev-scripts/DynamoDB/DDL/asientoContableTable.php --environment dev --prefix yupana
 php dev-scripts/DynamoDB/DDL/asientoContableDetalleTable.php --environment dev --prefix yupana
@@ -55,7 +62,7 @@ php dev-scripts/DynamoDB/DDL/mayorContableTable.php --environment dev --prefix y
 cd -
 ```
 
-Crea `dev_yupana_cuentas`, `dev_yupana_cuentas_profiles`, `dev_yupana_asientos`,
+Crea `dev_yupana_cuentas_profiles`, `dev_yupana_asientos`,
 `dev_yupana_asientos_detalles`, `dev_yupana_mayor` (con sus índices). Cada
 script es idempotente — si la tabla ya existe, lo avisa y no falla.
 
@@ -75,18 +82,14 @@ algo como:
 
 ```
 POST - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/perfiles/{profileId}/cuentas/init
-GET  - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/cuentas
+GET  - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/perfiles/{profileId}/cuentas
 ...
 ```
 
 Copiá el dominio base (`https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com`,
-sin el path) — lo necesitás en dos lugares:
-
-**a)** Frontend: en `caja-registradora/frontend/.env`, completá
-`NUXT_PUBLIC_API_YUPANA_BASE=` con esa URL, y volvé a levantar/desplegar el
-frontend (ya quedó todo el código listo, solo falta esa URL).
-
-**b)** Para el seed del catálogo (paso 5).
+sin el path) y ponelo en `caja-registradora/frontend/.env` como
+`NUXT_PUBLIC_API_YUPANA_BASE=`, y volvé a levantar/desplegar el frontend — ya
+quedó todo el código listo, solo falta esa URL.
 
 Verificación rápida de que el runtime conecta bien a DynamoDB:
 
@@ -96,42 +99,18 @@ curl https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/test-runtime
 
 Debería devolver `"status": "✅ Conexión Exitosa"`.
 
-## 5. Sembrar el catálogo maestro NIIF — DEV
+Desde ahí ya podés probar de punta a punta: entrá a un perfil `company` en la
+app, `Contabilidad → Plan de Cuentas`, y tocá "Activar módulo de contabilidad"
+— clona las 353 cuentas del JSON bundleado hacia esa empresa, sin ningún paso
+manual previo.
 
-Con la URL del paso 4 y un usuario/clave válidos contra el `auth` del
-orquestador (el mismo login que usás en la app):
-
-```bash
-php commands/cuentaCommand.php \
-  --file plan-cuentas-niif.csv \
-  --api https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com \
-  --auth-api https://0dpp2nb3rd.execute-api.us-east-1.amazonaws.com \
-  --email tu@correo.com \
-  --password 'tu-clave'
-```
-
-(`--auth-api` es la URL de `orchestrator`/auth — la misma que
-`NUXT_PUBLIC_API_AUTH_BASE` en el `.env` del frontend. Si tu usuario y clave no
-querés pasarlos como flags de shell, exportá `YUPANA_SEED_EMAIL` /
-`YUPANA_SEED_PASSWORD` en su lugar y omitilos del comando.)
-
-El script imprime una línea `OK: <codigo> - <nombre>` por cada cuenta creada y
-al final un resumen `Listo: N cuentas creadas, M fallidas`. Deberían ser 353
-creadas, 0 fallidas. **Corré esto una sola vez** — si lo corrés dos veces vas
-a duplicar todo el catálogo maestro (no tiene protección de idempotencia,
-a propósito, para poder re-sembrar borrando la tabla si hace falta corregir algo).
-
-En este punto ya podés probar desde la app: entrá a un perfil `company`,
-`Contabilidad → Plan de Cuentas`, y tocá "Activar módulo de contabilidad".
-
-## 6. Repetir para PROD
+## 5. Repetir para PROD
 
 Mismos pasos, cambiando el ambiente:
 
 ```bash
-# Tablas
+# Tabla
 cd ../../bob-contruye
-php dev-scripts/DynamoDB/DDL/cuentaContableTable.php --environment prod --prefix yupana
 php dev-scripts/DynamoDB/DDL/cuentaContableProfileTable.php --environment prod --prefix yupana
 php dev-scripts/DynamoDB/DDL/asientoContableTable.php --environment prod --prefix yupana
 php dev-scripts/DynamoDB/DDL/asientoContableDetalleTable.php --environment prod --prefix yupana
@@ -140,14 +119,6 @@ cd -
 
 # Deploy
 npm run deploy:prod
-
-# Seed (con la URL de prod que imprima el deploy, y el auth-api de prod)
-php commands/cuentaCommand.php \
-  --file plan-cuentas-niif.csv \
-  --api https://<url-prod-yupana>.execute-api.us-east-1.amazonaws.com \
-  --auth-api https://<url-prod-auth>.execute-api.us-east-1.amazonaws.com \
-  --email tu@correo.com \
-  --password 'tu-clave'
 ```
 
 Y actualizá también la variable de entorno de producción del frontend
@@ -156,10 +127,16 @@ esté configurada (no en el `.env` local, ese es solo para dev).
 
 ## Notas
 
-- `tableCreation.sh` en `bob-contruye/` ya tiene agregadas las 5 líneas de
+- `tableCreation.sh` en `bob-contruye/` ya tiene agregadas las 4 líneas de
   Yupana (`--environment prod`) para cuando reconstruyas todo el ambiente de
   cero.
-- Si en algún momento hace falta re-generar `plan-cuentas-niif.csv` desde el
-  PDF oficial, el script que lo generó fue
-  `scratchpad/build_plan_cuentas_csv.py` de esta sesión — no forma parte del
-  repo, pedímelo si hace falta reconstruirlo.
+- Si en algún momento hace falta corregir o ampliar el catálogo NIIF (por
+  ejemplo si la Superintendencia publica una actualización), se edita
+  `package/Common/src/Data/plan-cuentas-niif.json` directamente y se
+  redespliega — no hace falta re-sembrar nada, y las empresas que ya activaron
+  el módulo **no** se ven afectadas retroactivamente (su clon ya está creado;
+  solo las empresas que activen el módulo después del deploy ven el catálogo
+  actualizado).
+- El script que generó ese JSON a partir del PDF oficial fue
+  `scratchpad/build_plan_cuentas_json.py` de esta sesión — no forma parte del
+  repo, pedímelo si hace falta reconstruirlo desde cero.

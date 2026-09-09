@@ -2,14 +2,15 @@
 
 namespace App\Common\Services;
 
-use App\Common\Repositories\CuentaContableRepository;
+use App\Common\Data\PlanCuentasNiifProvider;
 use App\Common\Repositories\CuentaContableProfileRepository;
 
 /**
- * Clona el catálogo maestro NIIF hacia una empresa (profile_id). Idempotente:
- * si el perfil ya tiene cuentas clonadas, no vuelve a clonar (corrige el bug de
- * personal-finances/services/profiles/accounts/init.php, que duplica todo si se
- * llama dos veces).
+ * Clona el catálogo NIIF (bundleado en PlanCuentasNiifProvider) hacia una
+ * empresa (profile_id). Idempotente: si el perfil ya tiene cuentas clonadas,
+ * no vuelve a clonar (corrige el bug de
+ * personal-finances/services/profiles/accounts/init.php, que duplica todo si
+ * se llama dos veces).
  */
 class CuentaContableInitService
 {
@@ -25,12 +26,11 @@ class CuentaContableInitService
             ];
         }
 
-        $maestro = new CuentaContableRepository();
-        $cuentasBase = $maestro->getAll();
+        $cuentasBase = PlanCuentasNiifProvider::cuentas();
 
         $creadas = 0;
         foreach ($cuentasBase as $cuenta) {
-            $profileRepo->create($cuenta->toArray(), $profileId);
+            $profileRepo->create($cuenta, $profileId);
             $creadas++;
         }
 

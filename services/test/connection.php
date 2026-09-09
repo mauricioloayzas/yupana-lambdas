@@ -5,7 +5,7 @@ use Aws\Exception\AwsException;
 
 return function ($event) {
     $region = $_ENV['AWS_REGION'] ?? 'us-east-1';
-    $tableName = $_ENV['DYNAMODB_TABLE_CUENTAS'] ?? '';
+    $tableName = $_ENV['DYNAMODB_TABLE_CUENTAS_PROFILES'] ?? '';
 
     try {
         $client = new \Aws\DynamoDb\DynamoDbClient(['region' => $region, 'version' => 'latest']);

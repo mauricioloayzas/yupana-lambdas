@@ -1,0 +1,3179 @@
+[
+  {
+    "codigo": "1",
+    "nombre": "ACTIVO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVO"
+  },
+  {
+    "codigo": "101",
+    "nombre": "ACTIVO CORRIENTE",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVO CORRIENTE"
+  },
+  {
+    "codigo": "10101",
+    "nombre": "EFECTIVO Y EQUIVALENTES AL EFECTIVO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "EFECTIVO Y EQUIVALENTES AL EFECTIVO"
+  },
+  {
+    "codigo": "10102",
+    "nombre": "ACTIVOS FINANCIEROS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVOS FINANCIEROS"
+  },
+  {
+    "codigo": "1010201",
+    "nombre": "ACTIVOS FINANCIEROS A VALOR RAZONABLE CON CAMBIOS EN RESULTADOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ACTIVOS FINANCIEROS A VALOR RAZONABLE CON CAMBIOS EN RESULTADOS"
+  },
+  {
+    "codigo": "1010202",
+    "nombre": "ACTIVOS FINANCIEROS DISPONIBLES PARA LA VENTA",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ACTIVOS FINANCIEROS DISPONIBLES PARA LA VENTA"
+  },
+  {
+    "codigo": "1010203",
+    "nombre": "ACTIVOS FINANCIEROS MANTENIDOS HASTA EL VENCIMIENTO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ACTIVOS FINANCIEROS MANTENIDOS HASTA EL VENCIMIENTO"
+  },
+  {
+    "codigo": "1010204",
+    "nombre": "(-) PROVISION POR DETERIORO",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) PROVISION POR DETERIORO"
+  },
+  {
+    "codigo": "1010205",
+    "nombre": "DOCUMENTOS Y CUENTAS POR COBRAR CLIENTES NO RELACIONADOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "DOCUMENTOS Y CUENTAS POR COBRAR CLIENTES NO RELACIONADOS"
+  },
+  {
+    "codigo": "101020501",
+    "nombre": "DE ACTIVIDADES ORDINARIAS QUE GENEREN INTERESES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DE ACTIVIDADES ORDINARIAS QUE GENEREN INTERESES"
+  },
+  {
+    "codigo": "101020502",
+    "nombre": "DE ACTIVIDADES ORDINARIAS QUE NO GENEREN INTERESES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DE ACTIVIDADES ORDINARIAS QUE NO GENEREN INTERESES"
+  },
+  {
+    "codigo": "1010206",
+    "nombre": "DOCUMENTOS Y CUENTAS POR COBRAR CLIENTES RELACIONADOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DOCUMENTOS Y CUENTAS POR COBRAR CLIENTES RELACIONADOS"
+  },
+  {
+    "codigo": "1010207",
+    "nombre": "OTRAS CUENTAS POR COBRAR RELACIONADAS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTRAS CUENTAS POR COBRAR RELACIONADAS"
+  },
+  {
+    "codigo": "1010208",
+    "nombre": "OTRAS CUENTAS POR COBRAR",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTRAS CUENTAS POR COBRAR"
+  },
+  {
+    "codigo": "1010209",
+    "nombre": "(-) PROVISIÓN CUENTAS INCOBRABLES Y DETERIORO",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) PROVISIÓN CUENTAS INCOBRABLES Y DETERIORO"
+  },
+  {
+    "codigo": "10103",
+    "nombre": "INVENTARIOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "INVENTARIOS"
+  },
+  {
+    "codigo": "1010301",
+    "nombre": "INVENTARIOS DE MATERIA PRIMA",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVENTARIOS DE MATERIA PRIMA"
+  },
+  {
+    "codigo": "1010302",
+    "nombre": "INVENTARIOS DE PRODUCTOS EN PROCESO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVENTARIOS DE PRODUCTOS EN PROCESO"
+  },
+  {
+    "codigo": "1010303",
+    "nombre": "INVENTARIOS DE SUMINISTROS O MATERIALES A SER CONSUMIDOS EN EL PROCESO DE PRODUCCIÓN",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVENTARIOS DE SUMINISTROS O MATERIALES A SER CONSUMIDOS EN EL PROCESO DE PRODUCCIÓN"
+  },
+  {
+    "codigo": "1010304",
+    "nombre": "INVENTARIOS DE SUMINISTROS O MATERIALES A SER CONSUMIDOS EN LA PRESTACIÓN DE SERVICIO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVENTARIOS DE SUMINISTROS O MATERIALES A SER CONSUMIDOS EN LA PRESTACIÓN DE SERVICIO"
+  },
+  {
+    "codigo": "1010305",
+    "nombre": "INVENTARIOS DE PRODUCTOS TERMINADOS Y MERCADERIA EN ALMACÉN - PRODUCIDO POR LA COMPAÑÍA",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVENTARIOS DE PRODUCTOS TERMINADOS Y MERCADERIA EN ALMACÉN - PRODUCIDO POR LA COMPAÑÍA"
+  },
+  {
+    "codigo": "1010306",
+    "nombre": "INVENTARIOS DE PRODUCTOS TERMINADOS Y MERCADERIA EN ALMACÉN - COMPRADO DE TERCEROS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVENTARIOS DE PRODUCTOS TERMINADOS Y MERCADERIA EN ALMACÉN - COMPRADO DE TERCEROS"
+  },
+  {
+    "codigo": "1010307",
+    "nombre": "MERCADERÍAS EN TRÁNSITO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "MERCADERÍAS EN TRÁNSITO"
+  },
+  {
+    "codigo": "1010308",
+    "nombre": "OBRAS EN CONSTRUCCION",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OBRAS EN CONSTRUCCION"
+  },
+  {
+    "codigo": "1010309",
+    "nombre": "OBRAS TERMINADAS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OBRAS TERMINADAS"
+  },
+  {
+    "codigo": "1010310",
+    "nombre": "MATERIALES O BIENES PARA LA CONSTRUCCIÓN",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "MATERIALES O BIENES PARA LA CONSTRUCCIÓN"
+  },
+  {
+    "codigo": "1010311",
+    "nombre": "INVENTARIOS REPUESTOS, HERRAMIENTAS Y ACCESORIOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVENTARIOS REPUESTOS, HERRAMIENTAS Y ACCESORIOS"
+  },
+  {
+    "codigo": "1010312",
+    "nombre": "OTROS INVENTARIOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS INVENTARIOS"
+  },
+  {
+    "codigo": "1010313",
+    "nombre": "(-) PROVISIÓN POR VALOR NETO DE REALIZACIÓN Y OTRAS PÉRDIDAS EN EL INVENTARIO",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) PROVISIÓN POR VALOR NETO DE REALIZACIÓN Y OTRAS PÉRDIDAS EN EL INVENTARIO"
+  },
+  {
+    "codigo": "10104",
+    "nombre": "SERVICIOS Y OTROS PAGOS ANTICIPADOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "SERVICIOS Y OTROS PAGOS ANTICIPADOS"
+  },
+  {
+    "codigo": "1010401",
+    "nombre": "SEGUROS PAGADOS POR ANTICIPADO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "SEGUROS PAGADOS POR ANTICIPADO"
+  },
+  {
+    "codigo": "1010402",
+    "nombre": "ARRIENDOS PAGADOS POR ANTICIPADO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ARRIENDOS PAGADOS POR ANTICIPADO"
+  },
+  {
+    "codigo": "1010403",
+    "nombre": "ANTICIPOS A PROVEEDORES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ANTICIPOS A PROVEEDORES"
+  },
+  {
+    "codigo": "1010404",
+    "nombre": "OTROS ANTICIPOS ENTREGADOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS ANTICIPOS ENTREGADOS"
+  },
+  {
+    "codigo": "10105",
+    "nombre": "ACTIVOS POR IMPUESTOS CORRIENTES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVOS POR IMPUESTOS CORRIENTES"
+  },
+  {
+    "codigo": "1010501",
+    "nombre": "CRÉDITO TRIBUTARIO A FAVOR DE LA EMPRESA (IVA)",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "CRÉDITO TRIBUTARIO A FAVOR DE LA EMPRESA (IVA)"
+  },
+  {
+    "codigo": "1010502",
+    "nombre": "CRÉDITO TRIBUTARIO A FAVOR DE LA EMPRESA ( I. R.)",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "CRÉDITO TRIBUTARIO A FAVOR DE LA EMPRESA ( I. R.)"
+  },
+  {
+    "codigo": "1010503",
+    "nombre": "ANTICIPO DE IMPUESTO A LA RENTA",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ANTICIPO DE IMPUESTO A LA RENTA"
+  },
+  {
+    "codigo": "10106",
+    "nombre": "ACTIVOS NO CORRIENTES MANTENIDOS PARA LA VENTA Y OPERACIONES DISCONTINUADAS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ACTIVOS NO CORRIENTES MANTENIDOS PARA LA VENTA Y OPERACIONES DISCONTINUADAS"
+  },
+  {
+    "codigo": "10107",
+    "nombre": "CONSTRUCCIONES EN PROCESO (NIC 11 Y SECC.23 PYMES)",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "CONSTRUCCIONES EN PROCESO (NIC 11 Y SECC.23 PYMES)"
+  },
+  {
+    "codigo": "10108",
+    "nombre": "OTROS ACTIVOS CORRIENTES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS ACTIVOS CORRIENTES"
+  },
+  {
+    "codigo": "102",
+    "nombre": "ACTIVO NO CORRIENTE",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVO NO CORRIENTE"
+  },
+  {
+    "codigo": "10201",
+    "nombre": "PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "1020101",
+    "nombre": "TERRENOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "TERRENOS"
+  },
+  {
+    "codigo": "1020102",
+    "nombre": "EDIFICIOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "EDIFICIOS"
+  },
+  {
+    "codigo": "1020103",
+    "nombre": "CONTRUCCIONES EN CURSO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "CONTRUCCIONES EN CURSO"
+  },
+  {
+    "codigo": "1020104",
+    "nombre": "INSTALACIONES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INSTALACIONES"
+  },
+  {
+    "codigo": "1020105",
+    "nombre": "MUEBLES Y ENSERES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "MUEBLES Y ENSERES"
+  },
+  {
+    "codigo": "1020106",
+    "nombre": "MAQUINARIA Y EQUIPO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "MAQUINARIA Y EQUIPO"
+  },
+  {
+    "codigo": "1020107",
+    "nombre": "NAVES, AERONAVES, BARCAZAS Y SIMILARES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "NAVES, AERONAVES, BARCAZAS Y SIMILARES"
+  },
+  {
+    "codigo": "1020108",
+    "nombre": "EQUIPO DE COMPUTACIÓN",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "EQUIPO DE COMPUTACIÓN"
+  },
+  {
+    "codigo": "1020109",
+    "nombre": "VEHÍCULOS, EQUIPOS DE TRANSPORTE Y EQUIPO CAMINERO MÓVIL",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "VEHÍCULOS, EQUIPOS DE TRANSPORTE Y EQUIPO CAMINERO MÓVIL"
+  },
+  {
+    "codigo": "1020110",
+    "nombre": "OTROS PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "1020111",
+    "nombre": "REPUESTOS Y HERRAMIENTAS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "REPUESTOS Y HERRAMIENTAS"
+  },
+  {
+    "codigo": "1020112",
+    "nombre": "(-) DEPRECIACIÓN ACUMULADA PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) DEPRECIACIÓN ACUMULADA PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "1020113",
+    "nombre": "(-) DETERIORO ACUMULADO DE PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) DETERIORO ACUMULADO DE PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "1020114",
+    "nombre": "ACTIVOS DE EXPLORACIÓN Y EXPLOTACIÓN",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVOS DE EXPLORACIÓN Y EXPLOTACIÓN"
+  },
+  {
+    "codigo": "102011401",
+    "nombre": "ACTIVOS DE EXPLORACIÓN Y EXPLOTACIÓN",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ACTIVOS DE EXPLORACIÓN Y EXPLOTACIÓN"
+  },
+  {
+    "codigo": "102011402",
+    "nombre": "(-) AMORTIZACIÓN ACUMULADA DE ACTIVOS DE EXLORACIÓN Y EXPLOTACIÓN",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) AMORTIZACIÓN ACUMULADA DE ACTIVOS DE EXLORACIÓN Y EXPLOTACIÓN"
+  },
+  {
+    "codigo": "102011403",
+    "nombre": "(-) DETERIORO ACUMULADO DE ACTIVOS DE EXPLORACIÓN Y EXPLOTACIÓN",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) DETERIORO ACUMULADO DE ACTIVOS DE EXPLORACIÓN Y EXPLOTACIÓN"
+  },
+  {
+    "codigo": "10202",
+    "nombre": "PROPIEDADES DE INVERSIÓN",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PROPIEDADES DE INVERSIÓN"
+  },
+  {
+    "codigo": "1020201",
+    "nombre": "TERRENOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "TERRENOS"
+  },
+  {
+    "codigo": "1020202",
+    "nombre": "EDIFICIOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "EDIFICIOS"
+  },
+  {
+    "codigo": "1020203",
+    "nombre": "(-) DEPRECIACION ACUMULADA DE PROPIEDADES DE INVERSIÓN",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) DEPRECIACION ACUMULADA DE PROPIEDADES DE INVERSIÓN"
+  },
+  {
+    "codigo": "1020204",
+    "nombre": "(-) DETERIORO ACUMULADO DE PROPIEDADES DE INVERSIÓN",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) DETERIORO ACUMULADO DE PROPIEDADES DE INVERSIÓN"
+  },
+  {
+    "codigo": "10203",
+    "nombre": "ACTIVOS BIOLOGICOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVOS BIOLOGICOS"
+  },
+  {
+    "codigo": "1020301",
+    "nombre": "ANIMALES VIVOS EN CRECIMIENTO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ANIMALES VIVOS EN CRECIMIENTO"
+  },
+  {
+    "codigo": "1020302",
+    "nombre": "ANIMALES VIVOS EN PRODUCCIÓN",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ANIMALES VIVOS EN PRODUCCIÓN"
+  },
+  {
+    "codigo": "1020303",
+    "nombre": "PLANTAS EN CRECIMIENTO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PLANTAS EN CRECIMIENTO"
+  },
+  {
+    "codigo": "1020304",
+    "nombre": "PLANTAS EN PRODUCCIÓN",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PLANTAS EN PRODUCCIÓN"
+  },
+  {
+    "codigo": "1020305",
+    "nombre": "(-) DEPRECIACIÓN ACUMULADA DE ACTIVOS BIOLÓGICOS",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) DEPRECIACIÓN ACUMULADA DE ACTIVOS BIOLÓGICOS"
+  },
+  {
+    "codigo": "1020306",
+    "nombre": "(-) DETERIORO ACUMULADO DE ACTIVOS BIOLÓGICOS",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) DETERIORO ACUMULADO DE ACTIVOS BIOLÓGICOS"
+  },
+  {
+    "codigo": "10204",
+    "nombre": "ACTIVO INTANGIBLE",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVO INTANGIBLE"
+  },
+  {
+    "codigo": "1020401",
+    "nombre": "PLUSVALÍAS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PLUSVALÍAS"
+  },
+  {
+    "codigo": "1020402",
+    "nombre": "MARCAS, PATENTES, DERECHOS DE LLAVE, CUOTAS PATRIMONIALES Y OTROS SIMILARES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "MARCAS, PATENTES, DERECHOS DE LLAVE, CUOTAS PATRIMONIALES Y OTROS SIMILARES"
+  },
+  {
+    "codigo": "1020403",
+    "nombre": "ACTIVOS DE EXPLORACION Y EXPLOTACION",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ACTIVOS DE EXPLORACION Y EXPLOTACION"
+  },
+  {
+    "codigo": "1020404",
+    "nombre": "(-) AMORTIZACIÓN ACUMULADA DE ACTIVO INTANGIBLE",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) AMORTIZACIÓN ACUMULADA DE ACTIVO INTANGIBLE"
+  },
+  {
+    "codigo": "1020405",
+    "nombre": "(-) DETERIORO ACUMULADO DE ACTIVO INTANGIBLE",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) DETERIORO ACUMULADO DE ACTIVO INTANGIBLE"
+  },
+  {
+    "codigo": "1020406",
+    "nombre": "OTROS INTANGIBLES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS INTANGIBLES"
+  },
+  {
+    "codigo": "10205",
+    "nombre": "ACTIVOS POR IMPUESTOS DIFERIDOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ACTIVOS POR IMPUESTOS DIFERIDOS"
+  },
+  {
+    "codigo": "10206",
+    "nombre": "ACTIVOS FINANCIEROS NO CORRIENTES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "ACTIVOS FINANCIEROS NO CORRIENTES"
+  },
+  {
+    "codigo": "1020601",
+    "nombre": "ACTIVOS FINANCIEROS MANTENIDOS HASTA EL VENCIMIENTO",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ACTIVOS FINANCIEROS MANTENIDOS HASTA EL VENCIMIENTO"
+  },
+  {
+    "codigo": "1020602",
+    "nombre": "(-) PROVISIÓN POR DETERIORO DE ACTIVOS FINANCIEROS MANTENIDOS HASTA EL VENCIMIENTO",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) PROVISIÓN POR DETERIORO DE ACTIVOS FINANCIEROS MANTENIDOS HASTA EL VENCIMIENTO"
+  },
+  {
+    "codigo": "1020603",
+    "nombre": "DOCUMENTOS Y CUENTAS POR COBRAR",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DOCUMENTOS Y CUENTAS POR COBRAR"
+  },
+  {
+    "codigo": "1020604",
+    "nombre": "(-) PROVISIÓN CUENTAS INCOBRABLES DE ACTIVOS FINANCIEROS NO CORRIENTES",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) PROVISIÓN CUENTAS INCOBRABLES DE ACTIVOS FINANCIEROS NO CORRIENTES"
+  },
+  {
+    "codigo": "10207",
+    "nombre": "OTROS ACTIVOS NO CORRIENTES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "OTROS ACTIVOS NO CORRIENTES"
+  },
+  {
+    "codigo": "1020701",
+    "nombre": "INVERSIONES SUBSIDIARIAS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVERSIONES SUBSIDIARIAS"
+  },
+  {
+    "codigo": "1020702",
+    "nombre": "INVERSIONES ASOCIADAS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVERSIONES ASOCIADAS"
+  },
+  {
+    "codigo": "1020703",
+    "nombre": "INVERSIONES NEGOCIOS CONJUNTOS",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INVERSIONES NEGOCIOS CONJUNTOS"
+  },
+  {
+    "codigo": "1020704",
+    "nombre": "OTRAS INVERSIONES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTRAS INVERSIONES"
+  },
+  {
+    "codigo": "1020705",
+    "nombre": "(-) PROVISIÓN VALUACIÓN DE INVERSIONES",
+    "tipo": "asset",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) PROVISIÓN VALUACIÓN DE INVERSIONES"
+  },
+  {
+    "codigo": "1020706",
+    "nombre": "OTROS ACTIVOS NO CORRIENTES",
+    "tipo": "asset",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS ACTIVOS NO CORRIENTES"
+  },
+  {
+    "codigo": "2",
+    "nombre": "PASIVO",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PASIVO"
+  },
+  {
+    "codigo": "201",
+    "nombre": "PASIVO CORRIENTE",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PASIVO CORRIENTE"
+  },
+  {
+    "codigo": "20101",
+    "nombre": "PASIVOS FINANCIEROS A VALOR RAZONABLE CON CAMBIOS EN RESULTADO",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PASIVOS FINANCIEROS A VALOR RAZONABLE CON CAMBIOS EN RESULTADO"
+  },
+  {
+    "codigo": "20102",
+    "nombre": "PASIVOS POR CONTRATOS DE ARRENDAMIENTO FINANCIEROS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PASIVOS POR CONTRATOS DE ARRENDAMIENTO FINANCIEROS"
+  },
+  {
+    "codigo": "20103",
+    "nombre": "CUENTAS Y DOCUMENTOS POR PAGAR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "CUENTAS Y DOCUMENTOS POR PAGAR"
+  },
+  {
+    "codigo": "2010301",
+    "nombre": "LOCALES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "LOCALES"
+  },
+  {
+    "codigo": "2010302",
+    "nombre": "DEL EXTERIOR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DEL EXTERIOR"
+  },
+  {
+    "codigo": "20104",
+    "nombre": "OBLIGACIONES CON INSTITUCIONES FINANCIERAS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "OBLIGACIONES CON INSTITUCIONES FINANCIERAS"
+  },
+  {
+    "codigo": "2010401",
+    "nombre": "LOCALES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "LOCALES"
+  },
+  {
+    "codigo": "2010402",
+    "nombre": "DEL EXTERIOR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DEL EXTERIOR"
+  },
+  {
+    "codigo": "20105",
+    "nombre": "PROVISIONES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PROVISIONES"
+  },
+  {
+    "codigo": "2010501",
+    "nombre": "LOCALES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "LOCALES"
+  },
+  {
+    "codigo": "2010502",
+    "nombre": "DEL EXTERIOR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DEL EXTERIOR"
+  },
+  {
+    "codigo": "20106",
+    "nombre": "PORCIÓN CORRIENTE DE OBLIGACIONES EMITIDAS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PORCIÓN CORRIENTE DE OBLIGACIONES EMITIDAS"
+  },
+  {
+    "codigo": "20107",
+    "nombre": "OTRAS OBLIGACIONES CORRIENTES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "OTRAS OBLIGACIONES CORRIENTES"
+  },
+  {
+    "codigo": "2010701",
+    "nombre": "CON LA ADMINISTRACIÓN TRIBUTARIA",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "CON LA ADMINISTRACIÓN TRIBUTARIA"
+  },
+  {
+    "codigo": "2010702",
+    "nombre": "IMPUESTO A LA RENTA POR PAGAR DEL EJERCICIO",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "IMPUESTO A LA RENTA POR PAGAR DEL EJERCICIO"
+  },
+  {
+    "codigo": "2010703",
+    "nombre": "CON EL IESS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "CON EL IESS"
+  },
+  {
+    "codigo": "2010704",
+    "nombre": "POR BENEFICIOS DE LEY A EMPLEADOS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "POR BENEFICIOS DE LEY A EMPLEADOS"
+  },
+  {
+    "codigo": "2010705",
+    "nombre": "PARTICIPACIÓN TRABAJADORES POR PAGAR DEL EJERCICIO",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PARTICIPACIÓN TRABAJADORES POR PAGAR DEL EJERCICIO"
+  },
+  {
+    "codigo": "2010706",
+    "nombre": "DIVIDENDOS POR PAGAR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DIVIDENDOS POR PAGAR"
+  },
+  {
+    "codigo": "20108",
+    "nombre": "CUENTAS POR PAGAR DIVERSAS – RELACIONADAS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "CUENTAS POR PAGAR DIVERSAS – RELACIONADAS"
+  },
+  {
+    "codigo": "20109",
+    "nombre": "OTROS PASIVOS FINANCIEROS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS PASIVOS FINANCIEROS"
+  },
+  {
+    "codigo": "20110",
+    "nombre": "ANTICIPOS DE CLIENTES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ANTICIPOS DE CLIENTES"
+  },
+  {
+    "codigo": "20111",
+    "nombre": "PASIVOS DIRECTAMENTE ASOCIADOS CON LOS ACTIVOS NO CORRIENTES Y OPERACIONES DISCONTINUADAS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PASIVOS DIRECTAMENTE ASOCIADOS CON LOS ACTIVOS NO CORRIENTES Y OPERACIONES DISCONTINUADAS"
+  },
+  {
+    "codigo": "20112",
+    "nombre": "PORCIÓN CORRIENTE DE PROVISIONES POR BENEFICIOS A EMPLEADOS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PORCIÓN CORRIENTE DE PROVISIONES POR BENEFICIOS A EMPLEADOS"
+  },
+  {
+    "codigo": "2011201",
+    "nombre": "JUBILACIÓN PATRONAL",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "JUBILACIÓN PATRONAL"
+  },
+  {
+    "codigo": "2011202",
+    "nombre": "OTROS BENEFICIOS A LARGO PLAZO PARA LOS EMPLEADOS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS BENEFICIOS A LARGO PLAZO PARA LOS EMPLEADOS"
+  },
+  {
+    "codigo": "20113",
+    "nombre": "OTROS PASIVOS CORRIENTES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS PASIVOS CORRIENTES"
+  },
+  {
+    "codigo": "202",
+    "nombre": "PASIVO NO CORRIENTE",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PASIVO NO CORRIENTE"
+  },
+  {
+    "codigo": "20201",
+    "nombre": "PASIVOS POR CONTRATOS DE ARRENDAMIENTO FINANCIERO",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PASIVOS POR CONTRATOS DE ARRENDAMIENTO FINANCIERO"
+  },
+  {
+    "codigo": "20202",
+    "nombre": "CUENTAS Y DOCUMENTOS POR PAGAR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "CUENTAS Y DOCUMENTOS POR PAGAR"
+  },
+  {
+    "codigo": "2020201",
+    "nombre": "LOCALES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "LOCALES"
+  },
+  {
+    "codigo": "2020202",
+    "nombre": "DEL EXTERIOR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DEL EXTERIOR"
+  },
+  {
+    "codigo": "20203",
+    "nombre": "OBLIGACIONES CON INSTITUCIONES FINANCIERAS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "OBLIGACIONES CON INSTITUCIONES FINANCIERAS"
+  },
+  {
+    "codigo": "2020301",
+    "nombre": "LOCALES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "LOCALES"
+  },
+  {
+    "codigo": "2020302",
+    "nombre": "DEL EXTERIOR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DEL EXTERIOR"
+  },
+  {
+    "codigo": "20204",
+    "nombre": "CUENTAS POR PAGAR DIVERSAS / RELACIONADAS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "CUENTAS POR PAGAR DIVERSAS / RELACIONADAS"
+  },
+  {
+    "codigo": "2020401",
+    "nombre": "LOCALES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "LOCALES"
+  },
+  {
+    "codigo": "2020402",
+    "nombre": "DEL EXTERIOR",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "DEL EXTERIOR"
+  },
+  {
+    "codigo": "20205",
+    "nombre": "OBLIGACIONES EMITIDAS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OBLIGACIONES EMITIDAS"
+  },
+  {
+    "codigo": "20206",
+    "nombre": "ANTICIPOS DE CLIENTES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "ANTICIPOS DE CLIENTES"
+  },
+  {
+    "codigo": "20207",
+    "nombre": "PROVISIONES POR BENEFICIOS A EMPLEADOS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PROVISIONES POR BENEFICIOS A EMPLEADOS"
+  },
+  {
+    "codigo": "2020701",
+    "nombre": "JUBILACIÓN PATRONAL",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "JUBILACIÓN PATRONAL"
+  },
+  {
+    "codigo": "2020702",
+    "nombre": "OTROS BENEFICIOS NO CORRIENTES PARA LOS EMPLEADOS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS BENEFICIOS NO CORRIENTES PARA LOS EMPLEADOS"
+  },
+  {
+    "codigo": "20208",
+    "nombre": "OTRAS PROVISIONES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTRAS PROVISIONES"
+  },
+  {
+    "codigo": "20209",
+    "nombre": "PASIVO DIFERIDO",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PASIVO DIFERIDO"
+  },
+  {
+    "codigo": "2020901",
+    "nombre": "INGRESOS DIFERIDOS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "INGRESOS DIFERIDOS"
+  },
+  {
+    "codigo": "2020902",
+    "nombre": "PASIVOS POR IMPUESTOS DIFERIDOS",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PASIVOS POR IMPUESTOS DIFERIDOS"
+  },
+  {
+    "codigo": "20210",
+    "nombre": "OTROS PASIVOS NO CORRIENTES",
+    "tipo": "liability",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS PASIVOS NO CORRIENTES"
+  },
+  {
+    "codigo": "3",
+    "nombre": "PATRIMONIO NETO",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PATRIMONIO NETO"
+  },
+  {
+    "codigo": "30",
+    "nombre": "PATRIMONIO ATRIBUIBLE A LOS PROPIETARIOS DE LA CONTROLADORA",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "PATRIMONIO ATRIBUIBLE A LOS PROPIETARIOS DE LA CONTROLADORA"
+  },
+  {
+    "codigo": "301",
+    "nombre": "CAPITAL",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "CAPITAL"
+  },
+  {
+    "codigo": "30101",
+    "nombre": "CAPITAL SUSCRITO o ASIGNADO",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "CAPITAL SUSCRITO o ASIGNADO"
+  },
+  {
+    "codigo": "30102",
+    "nombre": "(-) CAPITAL SUSCRITO NO PAGADO, ACCIONES EN TESORERÍA",
+    "tipo": "equity",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) CAPITAL SUSCRITO NO PAGADO, ACCIONES EN TESORERÍA"
+  },
+  {
+    "codigo": "302",
+    "nombre": "APORTES DE SOCIOS O ACCIONISTAS PARA FUTURA CAPITALIZACIÓN",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "APORTES DE SOCIOS O ACCIONISTAS PARA FUTURA CAPITALIZACIÓN"
+  },
+  {
+    "codigo": "303",
+    "nombre": "PRIMA POR EMISION PRIMARIA DE ACCIONES",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PRIMA POR EMISION PRIMARIA DE ACCIONES"
+  },
+  {
+    "codigo": "304",
+    "nombre": "RESERVAS",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "RESERVAS"
+  },
+  {
+    "codigo": "30401",
+    "nombre": "RESERVA LEGAL",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "RESERVA LEGAL"
+  },
+  {
+    "codigo": "30402",
+    "nombre": "RESERVAS FACULTATIVA Y ESTATUTARIA",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "RESERVAS FACULTATIVA Y ESTATUTARIA"
+  },
+  {
+    "codigo": "305",
+    "nombre": "OTROS RESULTADOS INTEGRALES",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "OTROS RESULTADOS INTEGRALES"
+  },
+  {
+    "codigo": "30501",
+    "nombre": "SUPERAVIT DE ACTIVOS FINANCIEROS DISPONIBLES PARA LA VENTA",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "SUPERAVIT DE ACTIVOS FINANCIEROS DISPONIBLES PARA LA VENTA"
+  },
+  {
+    "codigo": "30502",
+    "nombre": "SUPERAVIT POR REVALUACIÓN DE PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "SUPERAVIT POR REVALUACIÓN DE PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "30503",
+    "nombre": "SUPERAVIT POR REVALUACION DE ACTIVOS INTANGIBLES",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "SUPERAVIT POR REVALUACION DE ACTIVOS INTANGIBLES"
+  },
+  {
+    "codigo": "30504",
+    "nombre": "OTROS SUPERAVIT POR REVALUACION",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "OTROS SUPERAVIT POR REVALUACION"
+  },
+  {
+    "codigo": "306",
+    "nombre": "RESULTADOS ACUMULADOS",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "RESULTADOS ACUMULADOS"
+  },
+  {
+    "codigo": "30601",
+    "nombre": "GANACIAS ACUMULADAS",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "GANACIAS ACUMULADAS"
+  },
+  {
+    "codigo": "30602",
+    "nombre": "(-) PÉRDIDAS ACUMULADAS",
+    "tipo": "equity",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) PÉRDIDAS ACUMULADAS"
+  },
+  {
+    "codigo": "30603",
+    "nombre": "RESULTADOS ACUMULADOS PROVENIENTES DE LA ADOPCIÓN POR PRIMERA VEZ DE LAS NIIF",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "RESULTADOS ACUMULADOS PROVENIENTES DE LA ADOPCIÓN POR PRIMERA VEZ DE LAS NIIF"
+  },
+  {
+    "codigo": "30604",
+    "nombre": "RESERVA DE CAPITAL",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "RESERVA DE CAPITAL"
+  },
+  {
+    "codigo": "30605",
+    "nombre": "RESERVA POR DONACIONES",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "RESERVA POR DONACIONES"
+  },
+  {
+    "codigo": "30606",
+    "nombre": "RESERVA POR VALUACIÓN",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "RESERVA POR VALUACIÓN"
+  },
+  {
+    "codigo": "30607",
+    "nombre": "SUPERÁVIT POR REVALUACIÓN DE INVERSIONES",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "SUPERÁVIT POR REVALUACIÓN DE INVERSIONES"
+  },
+  {
+    "codigo": "307",
+    "nombre": "RESULTADOS DEL EJERCICIO",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": false,
+    "descripcion": "RESULTADOS DEL EJERCICIO"
+  },
+  {
+    "codigo": "30701",
+    "nombre": "GANANCIA NETA DEL PERIODO",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "GANANCIA NETA DEL PERIODO"
+  },
+  {
+    "codigo": "30702",
+    "nombre": "(-) PÉRDIDA NETA DEL PERIODO",
+    "tipo": "equity",
+    "naturaleza": "debit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "(-) PÉRDIDA NETA DEL PERIODO"
+  },
+  {
+    "codigo": "31",
+    "nombre": "PARTICIPACIÓN NO CONTROLADORA",
+    "tipo": "equity",
+    "naturaleza": "credit",
+    "tipo_estado": 1,
+    "es_detalle": true,
+    "descripcion": "PARTICIPACIÓN NO CONTROLADORA"
+  },
+  {
+    "codigo": "41",
+    "nombre": "INGRESOS DE ACTIVIDADES ORDINARIAS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "INGRESOS DE ACTIVIDADES ORDINARIAS"
+  },
+  {
+    "codigo": "4101",
+    "nombre": "VENTA DE BIENES",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "VENTA DE BIENES"
+  },
+  {
+    "codigo": "4102",
+    "nombre": "PRESTACIÓN DE SERVICIOS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PRESTACIÓN DE SERVICIOS"
+  },
+  {
+    "codigo": "4103",
+    "nombre": "CONTRATOS DE CONSTRUCCIÓN",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "CONTRATOS DE CONSTRUCCIÓN"
+  },
+  {
+    "codigo": "4104",
+    "nombre": "SUBVENCIONES DEL GOBIERNO",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "SUBVENCIONES DEL GOBIERNO"
+  },
+  {
+    "codigo": "4105",
+    "nombre": "REGALÍAS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "REGALÍAS"
+  },
+  {
+    "codigo": "4106",
+    "nombre": "INTERESES",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "INTERESES"
+  },
+  {
+    "codigo": "410601",
+    "nombre": "INTERESES GENERADOS POR VENTAS A CRÉDITO",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INTERESES GENERADOS POR VENTAS A CRÉDITO"
+  },
+  {
+    "codigo": "410602",
+    "nombre": "OTROS INTERESES GENERADOS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS INTERESES GENERADOS"
+  },
+  {
+    "codigo": "4107",
+    "nombre": "DIVIDENDOS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "DIVIDENDOS"
+  },
+  {
+    "codigo": "4108",
+    "nombre": "GANANCIA POR MEDICIÓN A VALOR RAZONABLE DE ACTIVOS BIOLÓGICOS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GANANCIA POR MEDICIÓN A VALOR RAZONABLE DE ACTIVOS BIOLÓGICOS"
+  },
+  {
+    "codigo": "4109",
+    "nombre": "OTROS INGRESOS DE ACTIVIDADES ORDINARIAS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS INGRESOS DE ACTIVIDADES ORDINARIAS"
+  },
+  {
+    "codigo": "4110",
+    "nombre": "(-) DESCUENTO EN VENTAS",
+    "tipo": "income",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) DESCUENTO EN VENTAS"
+  },
+  {
+    "codigo": "4111",
+    "nombre": "(-) DEVOLUCIONES EN VENTAS",
+    "tipo": "income",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) DEVOLUCIONES EN VENTAS"
+  },
+  {
+    "codigo": "4112",
+    "nombre": "(-) BONIFICACIÓN EN PRODUCTO",
+    "tipo": "income",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) BONIFICACIÓN EN PRODUCTO"
+  },
+  {
+    "codigo": "4113",
+    "nombre": "(-) OTRAS REBAJAS COMERCIALES",
+    "tipo": "income",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) OTRAS REBAJAS COMERCIALES"
+  },
+  {
+    "codigo": "42",
+    "nombre": "GANANCIA BRUTA --> Subtotal A (41 - 51)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA BRUTA --> Subtotal A (41 - 51)"
+  },
+  {
+    "codigo": "43",
+    "nombre": "OTROS INGRESOS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "OTROS INGRESOS"
+  },
+  {
+    "codigo": "4301",
+    "nombre": "DIVIDENDOS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "DIVIDENDOS"
+  },
+  {
+    "codigo": "4302",
+    "nombre": "INTERESES FINANCIEROS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INTERESES FINANCIEROS"
+  },
+  {
+    "codigo": "4303",
+    "nombre": "GANANCIA EN INVERSIONES EN ASOCIADAS / SUBSIDIARIAS Y OTRAS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GANANCIA EN INVERSIONES EN ASOCIADAS / SUBSIDIARIAS Y OTRAS"
+  },
+  {
+    "codigo": "4304",
+    "nombre": "VALUACIÓN DE INSTRUMENTOS FINANCIEROS A VALOR RAZONABLE CON CAMBIO EN RESULTADOS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "VALUACIÓN DE INSTRUMENTOS FINANCIEROS A VALOR RAZONABLE CON CAMBIO EN RESULTADOS"
+  },
+  {
+    "codigo": "4305",
+    "nombre": "OTRAS RENTAS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTRAS RENTAS"
+  },
+  {
+    "codigo": "51",
+    "nombre": "COSTO DE VENTAS Y PRODUCCIÓN",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "COSTO DE VENTAS Y PRODUCCIÓN"
+  },
+  {
+    "codigo": "5101",
+    "nombre": "MATERIALES UTILIZADOS O PRODUCTOS VENDIDOS",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "MATERIALES UTILIZADOS O PRODUCTOS VENDIDOS"
+  },
+  {
+    "codigo": "510101",
+    "nombre": "(+) INVENTARIO INICIAL DE BIENES NO PRODUCIDOS POR LA COMPAÑÍA",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) INVENTARIO INICIAL DE BIENES NO PRODUCIDOS POR LA COMPAÑÍA"
+  },
+  {
+    "codigo": "510102",
+    "nombre": "(+) COMPRAS NETAS LOCALES DE BIENES NO PRODUCIDOS POR LA COMPAÑÍA",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) COMPRAS NETAS LOCALES DE BIENES NO PRODUCIDOS POR LA COMPAÑÍA"
+  },
+  {
+    "codigo": "510103",
+    "nombre": "(+) IMPORTACIONES DE BIENES NO PRODUCIDOS POR LA COMPAÑÍA",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) IMPORTACIONES DE BIENES NO PRODUCIDOS POR LA COMPAÑÍA"
+  },
+  {
+    "codigo": "510104",
+    "nombre": "(-) INVENTARIO FINAL DE BIENES NO PRODUCIDOS POR LA COMPAÑÍA",
+    "tipo": "cost",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) INVENTARIO FINAL DE BIENES NO PRODUCIDOS POR LA COMPAÑÍA"
+  },
+  {
+    "codigo": "510105",
+    "nombre": "(+) INVENTARIO INICIAL DE MATERIA PRIMA",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) INVENTARIO INICIAL DE MATERIA PRIMA"
+  },
+  {
+    "codigo": "510106",
+    "nombre": "(+) COMPRAS NETAS LOCALES DE MATERIA PRIMA",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) COMPRAS NETAS LOCALES DE MATERIA PRIMA"
+  },
+  {
+    "codigo": "510107",
+    "nombre": "(+) IMPORTACIONES DE MATERIA PRIMA",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) IMPORTACIONES DE MATERIA PRIMA"
+  },
+  {
+    "codigo": "510108",
+    "nombre": "(-) INVENTARIO FINAL DE MATERIA PRIMA",
+    "tipo": "cost",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) INVENTARIO FINAL DE MATERIA PRIMA"
+  },
+  {
+    "codigo": "510109",
+    "nombre": "(+) INVENTARIO INICIAL DE PRODUCTOS EN PROCESO",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) INVENTARIO INICIAL DE PRODUCTOS EN PROCESO"
+  },
+  {
+    "codigo": "510110",
+    "nombre": "(-) INVENTARIO FINAL DE PRODUCTOS EN PROCESO",
+    "tipo": "cost",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) INVENTARIO FINAL DE PRODUCTOS EN PROCESO"
+  },
+  {
+    "codigo": "510111",
+    "nombre": "(+) INVENTARIO INICIAL PRODUCTOS TERMINADOS",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) INVENTARIO INICIAL PRODUCTOS TERMINADOS"
+  },
+  {
+    "codigo": "510112",
+    "nombre": "(-) INVENTARIO FINAL DE PRODUCTOS TERMINADOS",
+    "tipo": "cost",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) INVENTARIO FINAL DE PRODUCTOS TERMINADOS"
+  },
+  {
+    "codigo": "5102",
+    "nombre": "(+) MANO DE OBRA DIRECTA",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "(+) MANO DE OBRA DIRECTA"
+  },
+  {
+    "codigo": "510201",
+    "nombre": "SUELDOS Y BENEFICIOS SOCIALES",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "SUELDOS Y BENEFICIOS SOCIALES"
+  },
+  {
+    "codigo": "510202",
+    "nombre": "GASTO PLANES DE BENEFICIOS A EMPLEADOS",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTO PLANES DE BENEFICIOS A EMPLEADOS"
+  },
+  {
+    "codigo": "5103",
+    "nombre": "(+) MANO DE OBRA INDIRECTA",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "(+) MANO DE OBRA INDIRECTA"
+  },
+  {
+    "codigo": "510301",
+    "nombre": "SUELDOS Y BENEFICIOS SOCIALES",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "SUELDOS Y BENEFICIOS SOCIALES"
+  },
+  {
+    "codigo": "510302",
+    "nombre": "GASTO PLANES DE BENEFICIOS A EMPLEADOS",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTO PLANES DE BENEFICIOS A EMPLEADOS"
+  },
+  {
+    "codigo": "5104",
+    "nombre": "(+) OTROS COSTOS INDIRECTOS DE FABRICACIÓN",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "(+) OTROS COSTOS INDIRECTOS DE FABRICACIÓN"
+  },
+  {
+    "codigo": "510401",
+    "nombre": "DEPRECIACIÓN PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "DEPRECIACIÓN PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "510402",
+    "nombre": "DETERIORO O PÉRDIDAS DE ACTIVOS BIOLÓGICOS",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "DETERIORO O PÉRDIDAS DE ACTIVOS BIOLÓGICOS"
+  },
+  {
+    "codigo": "510403",
+    "nombre": "DETERIORO DE PROPIEDAD, PLANTA Y EQUIPO",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "DETERIORO DE PROPIEDAD, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "510404",
+    "nombre": "EFECTO VALOR NETO DE REALIZACIÓN DE INVENTARIOS",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "EFECTO VALOR NETO DE REALIZACIÓN DE INVENTARIOS"
+  },
+  {
+    "codigo": "510405",
+    "nombre": "GASTO POR GARANTÍAS EN VENTA DE PRODUCTOS O SERVICIOS",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTO POR GARANTÍAS EN VENTA DE PRODUCTOS O SERVICIOS"
+  },
+  {
+    "codigo": "510406",
+    "nombre": "MANTENIMIENTO Y REPARACIONES",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "MANTENIMIENTO Y REPARACIONES"
+  },
+  {
+    "codigo": "510407",
+    "nombre": "SUMINISTROS MATERIALES Y REPUESTOS",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "SUMINISTROS MATERIALES Y REPUESTOS"
+  },
+  {
+    "codigo": "510408",
+    "nombre": "OTROS COSTOS DE PRODUCCIÓN",
+    "tipo": "cost",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS COSTOS DE PRODUCCIÓN"
+  },
+  {
+    "codigo": "52",
+    "nombre": "GASTOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GASTOS"
+  },
+  {
+    "codigo": "5201",
+    "nombre": "GASTOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GASTOS"
+  },
+  {
+    "codigo": "520101",
+    "nombre": "SUELDOS, SALARIOS Y DEMÁS REMUNERACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "SUELDOS, SALARIOS Y DEMÁS REMUNERACIONES"
+  },
+  {
+    "codigo": "520102",
+    "nombre": "APORTES A LA SEGURIDAD SOCIAL (incluido fondo de reserva)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "APORTES A LA SEGURIDAD SOCIAL (incluido fondo de reserva)"
+  },
+  {
+    "codigo": "520103",
+    "nombre": "BENEFICIOS SOCIALES E INDEMNIZACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "BENEFICIOS SOCIALES E INDEMNIZACIONES"
+  },
+  {
+    "codigo": "520104",
+    "nombre": "GASTO PLANES DE BENEFICIOS A EMPLEADOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTO PLANES DE BENEFICIOS A EMPLEADOS"
+  },
+  {
+    "codigo": "520105",
+    "nombre": "HONORARIOS, COMISIONES Y DIETAS A PERSONAS NATURALES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "HONORARIOS, COMISIONES Y DIETAS A PERSONAS NATURALES"
+  },
+  {
+    "codigo": "520106",
+    "nombre": "REMUNERACIONES A OTROS TRABAJADORES AUTÓNOMOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "REMUNERACIONES A OTROS TRABAJADORES AUTÓNOMOS"
+  },
+  {
+    "codigo": "520107",
+    "nombre": "HONORARIOS A EXTRANJEROS POR SERVICIOS OCASIONALES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "HONORARIOS A EXTRANJEROS POR SERVICIOS OCASIONALES"
+  },
+  {
+    "codigo": "520108",
+    "nombre": "MANTENIMIENTO Y REPARACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "MANTENIMIENTO Y REPARACIONES"
+  },
+  {
+    "codigo": "520109",
+    "nombre": "ARRENDAMIENTO OPERATIVO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ARRENDAMIENTO OPERATIVO"
+  },
+  {
+    "codigo": "520110",
+    "nombre": "COMISIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "COMISIONES"
+  },
+  {
+    "codigo": "520111",
+    "nombre": "PROMOCIÓN Y PUBLICIDAD",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROMOCIÓN Y PUBLICIDAD"
+  },
+  {
+    "codigo": "520112",
+    "nombre": "COMBUSTIBLES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "COMBUSTIBLES"
+  },
+  {
+    "codigo": "520113",
+    "nombre": "LUBRICANTES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "LUBRICANTES"
+  },
+  {
+    "codigo": "520114",
+    "nombre": "SEGUROS Y REASEGUROS (primas y cesiones)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "SEGUROS Y REASEGUROS (primas y cesiones)"
+  },
+  {
+    "codigo": "520115",
+    "nombre": "TRANSPORTE",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "TRANSPORTE"
+  },
+  {
+    "codigo": "520116",
+    "nombre": "GASTOS DE GESTIÓN (agasajos a accionistas, trabajadores y clientes)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTOS DE GESTIÓN (agasajos a accionistas, trabajadores y clientes)"
+  },
+  {
+    "codigo": "520117",
+    "nombre": "GASTOS DE VIAJE",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTOS DE VIAJE"
+  },
+  {
+    "codigo": "520118",
+    "nombre": "AGUA, ENERGÍA, LUZ Y TELECOMUNICACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "AGUA, ENERGÍA, LUZ Y TELECOMUNICACIONES"
+  },
+  {
+    "codigo": "520119",
+    "nombre": "NOTARIOS Y REGISTRADORES DE LA PROPIEDAD O MERCANTILES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "NOTARIOS Y REGISTRADORES DE LA PROPIEDAD O MERCANTILES"
+  },
+  {
+    "codigo": "520120",
+    "nombre": "ELIMINADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ELIMINADO"
+  },
+  {
+    "codigo": "520121",
+    "nombre": "DEPRECIACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "DEPRECIACIONES"
+  },
+  {
+    "codigo": "52012101",
+    "nombre": "PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "52012102",
+    "nombre": "PROPIEDADES DE INVERSIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROPIEDADES DE INVERSIÓN"
+  },
+  {
+    "codigo": "520122",
+    "nombre": "AMORTIZACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "AMORTIZACIONES"
+  },
+  {
+    "codigo": "52012201",
+    "nombre": "INTANGIBLES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INTANGIBLES"
+  },
+  {
+    "codigo": "52012202",
+    "nombre": "OTROS ACTIVOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS ACTIVOS"
+  },
+  {
+    "codigo": "520123",
+    "nombre": "GASTO DETERIORO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GASTO DETERIORO"
+  },
+  {
+    "codigo": "52012301",
+    "nombre": "PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "52012302",
+    "nombre": "ELIMINADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ELIMINADO"
+  },
+  {
+    "codigo": "52012303",
+    "nombre": "ELIMINADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ELIMINADO"
+  },
+  {
+    "codigo": "52012304",
+    "nombre": "ELIMINADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ELIMINADO"
+  },
+  {
+    "codigo": "52012305",
+    "nombre": "ELIMINADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ELIMINADO"
+  },
+  {
+    "codigo": "52012306",
+    "nombre": "OTROS ACTIVOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS ACTIVOS"
+  },
+  {
+    "codigo": "520124",
+    "nombre": "GASTOS POR CANTIDADES ANORMALES DE UTILIZACIÓN EN EL PROCESO DE PRODUCCIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GASTOS POR CANTIDADES ANORMALES DE UTILIZACIÓN EN EL PROCESO DE PRODUCCIÓN"
+  },
+  {
+    "codigo": "52012401",
+    "nombre": "MANO DE OBRA",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "MANO DE OBRA"
+  },
+  {
+    "codigo": "52012402",
+    "nombre": "MATERIALES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "MATERIALES"
+  },
+  {
+    "codigo": "52012403",
+    "nombre": "COSTOS DE PRODUCCIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "COSTOS DE PRODUCCIÓN"
+  },
+  {
+    "codigo": "520125",
+    "nombre": "GASTO POR REESTRUCTURACIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTO POR REESTRUCTURACIÓN"
+  },
+  {
+    "codigo": "520126",
+    "nombre": "VALOR NETO DE REALIZACIÓN DE INVENTARIOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "VALOR NETO DE REALIZACIÓN DE INVENTARIOS"
+  },
+  {
+    "codigo": "520127",
+    "nombre": "ELIMINADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ELIMINADO"
+  },
+  {
+    "codigo": "520128",
+    "nombre": "OTROS GASTOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS GASTOS"
+  },
+  {
+    "codigo": "5202",
+    "nombre": "GASTOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GASTOS"
+  },
+  {
+    "codigo": "520201",
+    "nombre": "SUELDOS, SALARIOS Y DEMÁS REMUNERACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "SUELDOS, SALARIOS Y DEMÁS REMUNERACIONES"
+  },
+  {
+    "codigo": "520202",
+    "nombre": "APORTES A LA SEGURIDAD SOCIAL (incluido fondo de reserva)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "APORTES A LA SEGURIDAD SOCIAL (incluido fondo de reserva)"
+  },
+  {
+    "codigo": "520203",
+    "nombre": "BENEFICIOS SOCIALES E INDEMNIZACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "BENEFICIOS SOCIALES E INDEMNIZACIONES"
+  },
+  {
+    "codigo": "520204",
+    "nombre": "GASTO PLANES DE BENEFICIOS A EMPLEADOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTO PLANES DE BENEFICIOS A EMPLEADOS"
+  },
+  {
+    "codigo": "520205",
+    "nombre": "HONORARIOS, COMISIONES Y DIETAS A PERSONAS NATURALES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "HONORARIOS, COMISIONES Y DIETAS A PERSONAS NATURALES"
+  },
+  {
+    "codigo": "520206",
+    "nombre": "REMUNERACIONES A OTROS TRABAJADORES AUTÓNOMOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "REMUNERACIONES A OTROS TRABAJADORES AUTÓNOMOS"
+  },
+  {
+    "codigo": "520207",
+    "nombre": "HONORARIOS A EXTRANJEROS POR SERVICIOS OCASIONALES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "HONORARIOS A EXTRANJEROS POR SERVICIOS OCASIONALES"
+  },
+  {
+    "codigo": "520208",
+    "nombre": "MANTENIMIENTO Y REPARACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "MANTENIMIENTO Y REPARACIONES"
+  },
+  {
+    "codigo": "520209",
+    "nombre": "ARRENDAMIENTO OPERATIVO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ARRENDAMIENTO OPERATIVO"
+  },
+  {
+    "codigo": "520210",
+    "nombre": "COMISIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "COMISIONES"
+  },
+  {
+    "codigo": "520211",
+    "nombre": "ELIMINADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "ELIMINADO"
+  },
+  {
+    "codigo": "520212",
+    "nombre": "COMBUSTIBLES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "COMBUSTIBLES"
+  },
+  {
+    "codigo": "520213",
+    "nombre": "LUBRICANTES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "LUBRICANTES"
+  },
+  {
+    "codigo": "520214",
+    "nombre": "SEGUROS Y REASEGUROS (primas y cesiones)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "SEGUROS Y REASEGUROS (primas y cesiones)"
+  },
+  {
+    "codigo": "520215",
+    "nombre": "TRANSPORTE",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "TRANSPORTE"
+  },
+  {
+    "codigo": "520216",
+    "nombre": "GASTOS DE GESTIÓN (agasajos a accionistas, trabajadores y clientes)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTOS DE GESTIÓN (agasajos a accionistas, trabajadores y clientes)"
+  },
+  {
+    "codigo": "520217",
+    "nombre": "GASTOS DE VIAJE",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTOS DE VIAJE"
+  },
+  {
+    "codigo": "520218",
+    "nombre": "AGUA, ENERGÍA, LUZ Y TELECOMUNICACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "AGUA, ENERGÍA, LUZ Y TELECOMUNICACIONES"
+  },
+  {
+    "codigo": "520219",
+    "nombre": "NOTARIOS Y REGISTRADORES DE LA PROPIEDAD O MERCANTILES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "NOTARIOS Y REGISTRADORES DE LA PROPIEDAD O MERCANTILES"
+  },
+  {
+    "codigo": "520220",
+    "nombre": "IMPUESTOS, CONTRIBUCIONES Y OTROS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "IMPUESTOS, CONTRIBUCIONES Y OTROS"
+  },
+  {
+    "codigo": "520221",
+    "nombre": "DEPRECIACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "DEPRECIACIONES"
+  },
+  {
+    "codigo": "52022101",
+    "nombre": "PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "52022102",
+    "nombre": "PROPIEDADES DE INVERSIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROPIEDADES DE INVERSIÓN"
+  },
+  {
+    "codigo": "520222",
+    "nombre": "AMORTIZACIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "AMORTIZACIONES"
+  },
+  {
+    "codigo": "52022201",
+    "nombre": "INTANGIBLES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INTANGIBLES"
+  },
+  {
+    "codigo": "52022202",
+    "nombre": "OTROS ACTIVOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS ACTIVOS"
+  },
+  {
+    "codigo": "520223",
+    "nombre": "GASTO DETERIORO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GASTO DETERIORO"
+  },
+  {
+    "codigo": "52022301",
+    "nombre": "PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "52022302",
+    "nombre": "INVENTARIOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INVENTARIOS"
+  },
+  {
+    "codigo": "52022303",
+    "nombre": "INSTRUMENTOS FINANCIEROS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INSTRUMENTOS FINANCIEROS"
+  },
+  {
+    "codigo": "52022304",
+    "nombre": "INTANGIBLES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INTANGIBLES"
+  },
+  {
+    "codigo": "52022305",
+    "nombre": "CUENTAS POR COBRAR",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "CUENTAS POR COBRAR"
+  },
+  {
+    "codigo": "52022306",
+    "nombre": "OTROS ACTIVOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS ACTIVOS"
+  },
+  {
+    "codigo": "520224",
+    "nombre": "GASTOS POR CANTIDADES ANORMALES DE UTILIZACIÓN EN EL PROCESO DE PRODUCCIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GASTOS POR CANTIDADES ANORMALES DE UTILIZACIÓN EN EL PROCESO DE PRODUCCIÓN"
+  },
+  {
+    "codigo": "52022401",
+    "nombre": "MANO DE OBRA",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "MANO DE OBRA"
+  },
+  {
+    "codigo": "52022402",
+    "nombre": "MATERIALES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "MATERIALES"
+  },
+  {
+    "codigo": "52022403",
+    "nombre": "COSTOS DE PRODUCCIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "COSTOS DE PRODUCCIÓN"
+  },
+  {
+    "codigo": "520225",
+    "nombre": "GASTO POR REESTRUCTURACIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTO POR REESTRUCTURACIÓN"
+  },
+  {
+    "codigo": "520226",
+    "nombre": "VALOR NETO DE REALIZACIÓN DE INVENTARIOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "VALOR NETO DE REALIZACIÓN DE INVENTARIOS"
+  },
+  {
+    "codigo": "520227",
+    "nombre": "GASTO IMPUESTO A LA RENTA (ACTIVOS Y PASIVOS DIFERIDOS)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTO IMPUESTO A LA RENTA (ACTIVOS Y PASIVOS DIFERIDOS)"
+  },
+  {
+    "codigo": "520228",
+    "nombre": "OTROS GASTOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS GASTOS"
+  },
+  {
+    "codigo": "5203",
+    "nombre": "GASTOS FINANCIEROS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GASTOS FINANCIEROS"
+  },
+  {
+    "codigo": "520301",
+    "nombre": "INTERESES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INTERESES"
+  },
+  {
+    "codigo": "520302",
+    "nombre": "COMISIONES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "COMISIONES"
+  },
+  {
+    "codigo": "520303",
+    "nombre": "GASTOS DE FINANCIAMIENTO DE ACTIVOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTOS DE FINANCIAMIENTO DE ACTIVOS"
+  },
+  {
+    "codigo": "520304",
+    "nombre": "DIFERENCIA EN CAMBIO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "DIFERENCIA EN CAMBIO"
+  },
+  {
+    "codigo": "520305",
+    "nombre": "OTROS GASTOS FINANCIEROS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS GASTOS FINANCIEROS"
+  },
+  {
+    "codigo": "5204",
+    "nombre": "OTROS GASTOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "OTROS GASTOS"
+  },
+  {
+    "codigo": "520401",
+    "nombre": "PERDIDA EN INVERSIONES EN ASOCIADAS / SUBSIDIARIAS Y OTRAS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PERDIDA EN INVERSIONES EN ASOCIADAS / SUBSIDIARIAS Y OTRAS"
+  },
+  {
+    "codigo": "520402",
+    "nombre": "OTROS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS"
+  },
+  {
+    "codigo": "60",
+    "nombre": "GANANCIA (PÉRDIDA) ANTES DE 15% A TRABAJADORES E IMPUESTO A LA RENTA DE OPERACIONES CONTINUADAS --> Subtotal B (A + 43 - 52)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA (PÉRDIDA) ANTES DE 15% A TRABAJADORES E IMPUESTO A LA RENTA DE OPERACIONES CONTINUADAS --> Subtotal B (A + 43 - 52)"
+  },
+  {
+    "codigo": "61",
+    "nombre": "15% PARTICIPACIÓN TRABAJADORES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "15% PARTICIPACIÓN TRABAJADORES"
+  },
+  {
+    "codigo": "62",
+    "nombre": "GANANCIA (PÉRDIDA) ANTES DE IMPUESTOS --> Subtotal C (B - 61)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA (PÉRDIDA) ANTES DE IMPUESTOS --> Subtotal C (B - 61)"
+  },
+  {
+    "codigo": "63",
+    "nombre": "IMPUESTO A LA RENTA CAUSADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "IMPUESTO A LA RENTA CAUSADO"
+  },
+  {
+    "codigo": "64",
+    "nombre": "GANANCIA (PÉRDIDA) DE OPERACIONES CONTINUADAS ANTES DEL IMPUESTO DIFERIDO --> Subtotal D (C - 63)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA (PÉRDIDA) DE OPERACIONES CONTINUADAS ANTES DEL IMPUESTO DIFERIDO --> Subtotal D (C - 63)"
+  },
+  {
+    "codigo": "65",
+    "nombre": "(-) GASTO POR IMPUESTO DIFERIDO",
+    "tipo": "expense",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(-) GASTO POR IMPUESTO DIFERIDO"
+  },
+  {
+    "codigo": "66",
+    "nombre": "(+) INGRESO POR IMPUESTO DIFERIDO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "(+) INGRESO POR IMPUESTO DIFERIDO"
+  },
+  {
+    "codigo": "67",
+    "nombre": "GANANCIA (PÉRDIDA) DE OPERACIONES CONTINUADAS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA (PÉRDIDA) DE OPERACIONES CONTINUADAS"
+  },
+  {
+    "codigo": "71",
+    "nombre": "INGRESOS POR OPERACIONES DISCONTINUADAS",
+    "tipo": "income",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "INGRESOS POR OPERACIONES DISCONTINUADAS"
+  },
+  {
+    "codigo": "72",
+    "nombre": "GASTOS POR OPERACIONES DISCONTINUADAS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GASTOS POR OPERACIONES DISCONTINUADAS"
+  },
+  {
+    "codigo": "73",
+    "nombre": "GANANCIA (PÉRDIDA) ANTES DE 15% A TRABAJADORES E IMPUESTO A LA RENTA DE OPERACIONES DISCONTINUADAS --> Subtotal E (71 - 72)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA (PÉRDIDA) ANTES DE 15% A TRABAJADORES E IMPUESTO A LA RENTA DE OPERACIONES DISCONTINUADAS --> Subtotal E (71 - 72)"
+  },
+  {
+    "codigo": "74",
+    "nombre": "15% PARTICIPACIÓN TRABAJADORES",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "15% PARTICIPACIÓN TRABAJADORES"
+  },
+  {
+    "codigo": "75",
+    "nombre": "GANANCIA (PÉRDIDA) ANTES DE IMPUESTOS DE OPERACIONES DISCONTINUADAS --> Subtotal F (E - 74)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA (PÉRDIDA) ANTES DE IMPUESTOS DE OPERACIONES DISCONTINUADAS --> Subtotal F (E - 74)"
+  },
+  {
+    "codigo": "76",
+    "nombre": "IMPUESTO A LA RENTA CAUSADO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "IMPUESTO A LA RENTA CAUSADO"
+  },
+  {
+    "codigo": "77",
+    "nombre": "GANANCIA (PÉRDIDA) DE OPERACIONES DISCONTINUADAS --> Subtotal G (F - 76)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA (PÉRDIDA) DE OPERACIONES DISCONTINUADAS --> Subtotal G (F - 76)"
+  },
+  {
+    "codigo": "79",
+    "nombre": "GANANCIA (PÉRDIDA) NETA DEL PERIODO --> Subtotal H (D + G)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA (PÉRDIDA) NETA DEL PERIODO --> Subtotal H (D + G)"
+  },
+  {
+    "codigo": "7901",
+    "nombre": "PROPIETARIOS DE LA CONTROLADORA",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROPIETARIOS DE LA CONTROLADORA"
+  },
+  {
+    "codigo": "7902",
+    "nombre": "PARTICIPACIÓN ATRIBUIBLE A LA NO CONTROLADORA (informativo)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PARTICIPACIÓN ATRIBUIBLE A LA NO CONTROLADORA (informativo)"
+  },
+  {
+    "codigo": "81",
+    "nombre": "COMPONENTES DEL OTRO RESULTADO INTEGRAL",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "COMPONENTES DEL OTRO RESULTADO INTEGRAL"
+  },
+  {
+    "codigo": "8101",
+    "nombre": "DIFERENCIA DE CAMBIO POR CONVERSIÓN",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "DIFERENCIA DE CAMBIO POR CONVERSIÓN"
+  },
+  {
+    "codigo": "8102",
+    "nombre": "VALUACIÓN DE ACTIVOS FINANCIEROS DISPONIBLES PARA LA VENTA",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "VALUACIÓN DE ACTIVOS FINANCIEROS DISPONIBLES PARA LA VENTA"
+  },
+  {
+    "codigo": "8103",
+    "nombre": "GANANCIAS POR REVALUACIÓN DE PROPIEDADES, PLANTA Y EQUIPO",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GANANCIAS POR REVALUACIÓN DE PROPIEDADES, PLANTA Y EQUIPO"
+  },
+  {
+    "codigo": "8104",
+    "nombre": "GANANCIAS (PÉRDIDAS) ACTUARIALES POR PLANES DE BENEFICIOS DEFINIDOS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GANANCIAS (PÉRDIDAS) ACTUARIALES POR PLANES DE BENEFICIOS DEFINIDOS"
+  },
+  {
+    "codigo": "8105",
+    "nombre": "REVERSIÓN DEL DETERIORO (PÉRDIDA POR DETERIORO) DE UN ACTIVO REVALUADO",
+    "tipo": "expense",
+    "naturaleza": "credit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "REVERSIÓN DEL DETERIORO (PÉRDIDA POR DETERIORO) DE UN ACTIVO REVALUADO"
+  },
+  {
+    "codigo": "8106",
+    "nombre": "PARTICIPACIÓN DE OTRO RESULTADO INTEGRAL DE ASOCIADAS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PARTICIPACIÓN DE OTRO RESULTADO INTEGRAL DE ASOCIADAS"
+  },
+  {
+    "codigo": "8107",
+    "nombre": "IMPUESTO SOBRE LAS GANACIAS RELATIVO A OTRO RESULTADO INTEGRAL",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "IMPUESTO SOBRE LAS GANACIAS RELATIVO A OTRO RESULTADO INTEGRAL"
+  },
+  {
+    "codigo": "8108",
+    "nombre": "OTROS (DETALLAR EN NOTAS)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "OTROS (DETALLAR EN NOTAS)"
+  },
+  {
+    "codigo": "82",
+    "nombre": "RESULTADO INTEGRAL TOTAL DEL AÑO --> Subtotal I (H + 81)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "RESULTADO INTEGRAL TOTAL DEL AÑO --> Subtotal I (H + 81)"
+  },
+  {
+    "codigo": "8201",
+    "nombre": "PROPIETARIOS DE LA CONTROLADORA",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PROPIETARIOS DE LA CONTROLADORA"
+  },
+  {
+    "codigo": "8202",
+    "nombre": "PARTICIPACIÓN NO CONTROLADORA (informativo)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "PARTICIPACIÓN NO CONTROLADORA (informativo)"
+  },
+  {
+    "codigo": "90",
+    "nombre": "GANANCIA POR ACCIÓN (SOLO EMPRESAS QUE COTIZAN EN BOLSA)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA POR ACCIÓN (SOLO EMPRESAS QUE COTIZAN EN BOLSA)"
+  },
+  {
+    "codigo": "9001",
+    "nombre": "GANANCIA POR ACCIÓN BÁSICA",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA POR ACCIÓN BÁSICA"
+  },
+  {
+    "codigo": "900101",
+    "nombre": "GANANCIA POR ACCIÓN BÁSICA EN OPERACIONES CONTINUADAS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GANANCIA POR ACCIÓN BÁSICA EN OPERACIONES CONTINUADAS"
+  },
+  {
+    "codigo": "900102",
+    "nombre": "GANANCIA POR ACCIÓN BÁSICA EN OPERACIONES DISCONTINUADAS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GANANCIA POR ACCIÓN BÁSICA EN OPERACIONES DISCONTINUADAS"
+  },
+  {
+    "codigo": "9002",
+    "nombre": "GANANCIA POR ACCIÓN DILUÍDA",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": false,
+    "descripcion": "GANANCIA POR ACCIÓN DILUÍDA"
+  },
+  {
+    "codigo": "900201",
+    "nombre": "GANANCIA POR ACCIÓN DILUÍDA EN OPERACIONES CONTINUADAS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GANANCIA POR ACCIÓN DILUÍDA EN OPERACIONES CONTINUADAS"
+  },
+  {
+    "codigo": "900202",
+    "nombre": "GANANCIA POR ACCIÓN DILUÍDA EN OPERACIONES DISCONTINUADAS",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "GANANCIA POR ACCIÓN DILUÍDA EN OPERACIONES DISCONTINUADAS"
+  },
+  {
+    "codigo": "91",
+    "nombre": "UTILIDAD A REINVERTIR (INFORMATIVO)",
+    "tipo": "expense",
+    "naturaleza": "debit",
+    "tipo_estado": 2,
+    "es_detalle": true,
+    "descripcion": "UTILIDAD A REINVERTIR (INFORMATIVO)"
+  }
+]
