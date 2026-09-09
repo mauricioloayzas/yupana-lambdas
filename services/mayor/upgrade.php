@@ -25,7 +25,7 @@ return function (array $event) {
             return [
                 'statusCode' => 201,
                 'headers' => ['Content-Type' => 'application/json'],
-                'body' => json_encode($service->process($data))
+                'body' => json_encode(['data' => $service->process($data)])
             ];
         } catch (\Throwable $e) {
             return ['statusCode' => 500, 'body' => json_encode(['error' => $e->getMessage()])];

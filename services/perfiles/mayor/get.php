@@ -34,7 +34,7 @@ return function (array $event) {
         return [
             'statusCode' => 200,
             'headers' => ['Content-Type' => 'application/json'],
-            'body' => json_encode($movimiento->toArray())
+            'body' => json_encode(['data' => $movimiento->toArray()])
         ];
     } catch (\Throwable $e) {
         return ['statusCode' => 500, 'body' => json_encode(['error' => $e->getMessage()])];

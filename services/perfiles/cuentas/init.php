@@ -20,7 +20,7 @@ return function (array $event) {
         return [
             'statusCode' => $result['already_initialized'] ? 200 : 201,
             'headers' => ['Content-Type' => 'application/json'],
-            'body' => json_encode($result)
+            'body' => json_encode(['data' => $result])
         ];
     } catch (\Throwable $e) {
         return ['statusCode' => 500, 'body' => json_encode(['error' => $e->getMessage()])];

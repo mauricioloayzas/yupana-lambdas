@@ -29,7 +29,7 @@ return function (array $event) {
         return [
             'statusCode' => 201,
             'headers' => ['Content-Type' => 'application/json'],
-            'body' => json_encode($asiento)
+            'body' => json_encode(['data' => $asiento])
         ];
     } catch (\Throwable $e) {
         // Las validaciones de negocio (desbalance, cuenta no postable, etc.) se
