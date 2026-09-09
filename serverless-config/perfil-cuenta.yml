@@ -1,3 +1,15 @@
+perfil-cuentas-create:
+  handler: services/perfiles/cuentas/create.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Crea una cuenta personalizada bajo una cuenta existente de la empresa (código autogenerado)"
+  events:
+    - httpApi:
+        method: POST
+        path: /perfiles/{profileId}/cuentas
+        authorizer: cognitoAuthorizer
+
 perfil-cuentas-init:
   handler: services/perfiles/cuentas/init.php
   runtime: php-84
