@@ -75,17 +75,12 @@ foreach ($porPerfil as $profileId => $cuentas) {
         if ($c['codigo'] === '5101') {
             $grupo5101 = $c;
         }
-        if (($c['parent_id'] ?? null) !== null) {
-            $padre = null;
-            foreach ($cuentas as $posiblePadre) {
-                if ($posiblePadre['id'] === $c['parent_id']) {
-                    $padre = $posiblePadre;
-                    break;
-                }
-            }
-            if ($padre !== null && $padre['codigo'] === '5101') {
-                $tieneCostoVenta = true;
-            }
+        // OJO: 5101 ya tiene 12 hijos OFICIALES (510101-510112, el cálculo
+        // periódico de cierre) desde que se clona el catálogo — "¿tiene algún
+        // hijo?" siempre da true y nunca detectaría que falta crear la
+        // personalizada. Hay que buscar el código exacto "510113".
+        if ($c['codigo'] === '510113') {
+            $tieneCostoVenta = true;
         }
     }
 
