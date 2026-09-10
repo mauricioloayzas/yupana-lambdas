@@ -1,0 +1,23 @@
+perfil-reportes-balance-general:
+  handler: services/perfiles/reportes/balance-general.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Estado de Situación Financiera (Balance General) a una fecha de corte — JSON o PDF"
+  events:
+    - httpApi:
+        method: GET
+        path: /perfiles/{profileId}/reportes/balance-general
+        authorizer: cognitoAuthorizer
+
+perfil-reportes-estado-resultados:
+  handler: services/perfiles/reportes/estado-resultados.php
+  runtime: php-84
+  layers:
+    - ${self:custom.vendorLayerArn}
+  description: "Estado de Resultado Integral de un período — JSON o PDF"
+  events:
+    - httpApi:
+        method: GET
+        path: /perfiles/{profileId}/reportes/estado-resultados
+        authorizer: cognitoAuthorizer

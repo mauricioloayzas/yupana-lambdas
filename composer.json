@@ -15,7 +15,8 @@
     "aws/aws-sdk-php": "^3.200",
     "ramsey/uuid": "^4.9",
     "vlucas/phpdotenv": "^5.6",
-    "mauricioloayzas/bob-construye": "^1.83"
+    "mauricioloayzas/bob-construye": "^1.83",
+    "tecnickcom/tcpdf": "^6.11"
   },
   "autoload": {
     "psr-4": {

@@ -102,11 +102,15 @@ package:
     - '!**'
     - 'services/**'
     - 'package/**'
+    - 'vendor/tecnickcom/**'
+    - 'vendor/composer/**'
+    - 'vendor/autoload.php'
 
 functions:
   - ${file(serverless-config/perfil-cuenta.yml)}
   - ${file(serverless-config/asiento.yml)}
   - ${file(serverless-config/mayor.yml)}
+  - ${file(serverless-config/reportes.yml)}
   - ${file(serverless-config/test.yml)}
 
 resources:
