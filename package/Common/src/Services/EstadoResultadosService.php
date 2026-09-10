@@ -22,6 +22,8 @@ use App\Common\Repositories\MayorContableRepository;
  */
 class EstadoResultadosService
 {
+    use MovimientoPeriodoTrait;
+
     private const CODIGOS_BASE = [
         '41' => 'INGRESOS DE ACTIVIDADES ORDINARIAS',
         '43' => 'OTROS INGRESOS',
@@ -111,37 +113,6 @@ class EstadoResultadosService
             'resultado_integral_total' => self::redondear($i),
             'lineas' => $lineas,
         ];
-    }
-
-    private function movimientoPeriodo(
-        CuentaContableProfileRepository $cuentaRepo,
-        MayorContableRepository $mayorRepo,
-        string $profileId,
-        string $codigo,
-        string $anio,
-        string $desde,
-        string $hasta
-    ): float {
-        $cuenta = $cuentaRepo->getByProfileIdAndCodigo($profileId, $codigo);
-        if (!$cuenta) {
-            return 0.0;
-        }
-
-        $debe = 0.0;
-        $haber = 0.0;
-        foreach ($mayorRepo->findAllByCuentaId($cuenta->id) as $movimiento) {
-            if ($movimiento->anio !== $anio) {
-                continue;
-            }
-            if ($movimiento->mes < $desde || $movimiento->mes > $hasta) {
-                continue;
-            }
-            $debe += $movimiento->debe;
-            $haber += $movimiento->haber;
-        }
-
-        $saldoPeriodo = $debe - $haber;
-        return $cuenta->naturaleza->value === 'debit' ? $saldoPeriodo : -$saldoPeriodo;
     }
 
     private function linea(string $codigo, string $nombre, float $valor, int $nivel, bool $esSubtotal): array
