@@ -29,13 +29,42 @@ class ProfileAccessMiddleware
         $rbacs = (new ProfileRbacRepository())->getProfileRbacsByUserId($userId) ?? [];
         $ownedProfileIds = array_map(fn($rbac) => $rbac->profile_id, $rbacs);
 
-        $targetProfile = (new ProfileRepository())->get($profileId);
-        $parentId = $targetProfile->parent_id ?? null;
+        $ancestorIds = self::resolveAncestorChain($profileId);
 
-        if (!ProfileAccessGuard::hasAccess($profileId, $parentId, $ownedProfileIds)) {
+        if (!ProfileAccessGuard::hasAccessViaAncestors($profileId, $ancestorIds, $ownedProfileIds)) {
             return ['statusCode' => 403, 'body' => json_encode(['error' => 'No tienes acceso a este perfil'])];
         }
 
         return null;
+    }
+
+    /**
+     * Camina parent_id hacia arriba desde $profileId (sin incluirlo) hasta la raíz, con un
+     * tope de profundidad como salvaguarda — la jerarquía real hoy es como mucho
+     * origin → contador → company (2 niveles). Necesario para que alguien con RBAC solo en
+     * el perfil "origin" tenga acceso también a las empresas administradas por un contador,
+     * no solo a las que cuelgan directamente de origin.
+     *
+     * @return string[]
+     */
+    private static function resolveAncestorChain(string $profileId, int $maxDepth = 4): array
+    {
+        $profileRepo = new ProfileRepository();
+        $ancestorIds = [];
+        $currentId   = $profileId;
+
+        for ($i = 0; $i < $maxDepth; $i++) {
+            $currentProfile = $profileRepo->get($currentId);
+            $parentId       = $currentProfile->parent_id ?? null;
+
+            if ($parentId === null) {
+                break;
+            }
+
+            $ancestorIds[] = $parentId;
+            $currentId     = $parentId;
+        }
+
+        return $ancestorIds;
     }
 }
