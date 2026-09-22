@@ -33,45 +33,52 @@ class ProfileAccessMiddleware
             return null;
         }
 
-        $ownedProfileIds = array_map(fn($rbac) => $rbac->profile_id, $rbacs);
-
-        $ancestorIds = self::resolveAncestorChain($profileId);
-
-        if (!ProfileAccessGuard::hasAccessViaAncestors($profileId, $ancestorIds, $ownedProfileIds)) {
-            return ['statusCode' => 403, 'body' => json_encode(['error' => 'No tienes acceso a este perfil'])];
+        // Relación directa: el usuario tiene una RBAC propia sobre este perfil puntual.
+        foreach ($rbacs as $rbac) {
+            if ($rbac->profile_id === $profileId) {
+                return null;
+            }
         }
 
-        return null;
+        // Owner/Administrator del padre directo (ej. el contador de esta empresa) — un
+        // solo nivel, no toda la cadena de ancestros: origin ya se resuelve arriba
+        // (isOriginAdmin), y el acceso real de un contador a sus empresas se otorga como
+        // RBAC directo (rol "Contador") apenas la suscripción se activa (ver
+        // ContadorAccessService); esto es solo la ventana antes de que eso ocurra.
+        if (self::isParentOwnerOrAdmin($rbacs, $profileId)) {
+            return null;
+        }
+
+        return ['statusCode' => 403, 'body' => json_encode(['error' => 'No tienes acceso a este perfil'])];
     }
 
     /**
-     * Camina parent_id hacia arriba desde $profileId (sin incluirlo) hasta la raíz, con un
-     * tope de profundidad como salvaguarda — la jerarquía real hoy es como mucho
-     * origin → contador → company (2 niveles). Necesario para que alguien con RBAC solo en
-     * el perfil "origin" tenga acceso también a las empresas administradas por un contador,
-     * no solo a las que cuelgan directamente de origin.
-     *
-     * @return string[]
+     * True si el usuario tiene rol Owner o Administrator sobre el padre directo de
+     * $profileId.
      */
-    private static function resolveAncestorChain(string $profileId, int $maxDepth = 4): array
+    private static function isParentOwnerOrAdmin(array $rbacs, string $profileId): bool
     {
-        $profileRepo = new ProfileRepository();
-        $ancestorIds = [];
-        $currentId   = $profileId;
-
-        for ($i = 0; $i < $maxDepth; $i++) {
-            $currentProfile = $profileRepo->get($currentId);
-            $parentId       = $currentProfile->parent_id ?? null;
-
-            if ($parentId === null) {
-                break;
-            }
-
-            $ancestorIds[] = $parentId;
-            $currentId     = $parentId;
+        $profile = (new ProfileRepository())->get($profileId);
+        if (!$profile || empty($profile->parent_id)) {
+            return false;
         }
 
-        return $ancestorIds;
+        $roleRepo = null;
+
+        foreach ($rbacs as $rbac) {
+            if ($rbac->profile_id !== $profile->parent_id) {
+                continue;
+            }
+
+            $roleRepo ??= new RoleRepository();
+            $role = $roleRepo->get($rbac->role_id);
+
+            if ($role && in_array($role->name, ['Owner', 'Administrator'], true)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
