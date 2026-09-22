@@ -4,6 +4,7 @@ namespace App\Common\Http;
 
 use App\Common\Repositories\ProfileRbacRepository;
 use App\Common\Repositories\ProfileRepository;
+use App\Common\Repositories\RoleRepository;
 use Mauloasan\BobConstruye\Http\ProfileAccessGuard;
 
 class ProfileAccessMiddleware
@@ -27,6 +28,11 @@ class ProfileAccessMiddleware
         }
 
         $rbacs = (new ProfileRbacRepository())->getProfileRbacsByUserId($userId) ?? [];
+
+        if (self::isOriginAdmin($rbacs)) {
+            return null;
+        }
+
         $ownedProfileIds = array_map(fn($rbac) => $rbac->profile_id, $rbacs);
 
         $ancestorIds = self::resolveAncestorChain($profileId);
@@ -66,5 +72,38 @@ class ProfileAccessMiddleware
         }
 
         return $ancestorIds;
+    }
+
+    /**
+     * True si el usuario tiene rol Owner o Administrator sobre el perfil "origin" (raíz de
+     * la app, SERVICE_PROFILE_ID) — soporte de plataforma: da acceso a cualquier perfil sin
+     * depender de la cadena de parent_id ni de tener un RBAC propio ahí.
+     *
+     * @param \Mauloasan\BobConstruye\DynamoDB\Entities\Orchestrator\ProfileRbacEntity[] $rbacs
+     * Ya cargados por el caller, para no repetir la consulta.
+     */
+    private static function isOriginAdmin(array $rbacs): bool
+    {
+        $originId = $_ENV['SERVICE_PROFILE_ID'] ?? '';
+        if ($originId === '') {
+            return false;
+        }
+
+        $roleRepo = null;
+
+        foreach ($rbacs as $rbac) {
+            if ($rbac->profile_id !== $originId) {
+                continue;
+            }
+
+            $roleRepo ??= new RoleRepository();
+            $role = $roleRepo->get($rbac->role_id);
+
+            if ($role && in_array($role->name, ['Owner', 'Administrator'], true)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

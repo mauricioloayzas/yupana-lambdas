@@ -13,6 +13,10 @@ provider:
 
     DYNAMODB_TABLE_PROFILES: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_ORCHESTRATOR}_profiles
     DYNAMODB_TABLE_RBACS: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_ORCHESTRATOR}_profiles_rbacs
+    DYNAMODB_TABLE_ROLES: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_ORCHESTRATOR}_roles
+    # Perfil "origin" (Clichín) — su Owner/Administrator tiene acceso a cualquier perfil
+    # (ProfileAccessMiddleware::isOriginAdmin), para soporte de plataforma.
+    SERVICE_PROFILE_ID: ${env:SERVICE_PROFILE_ID, ''}
 
     DYNAMODB_TABLE_CUENTAS_PROFILES: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_YUPANA}_cuentas_profiles
     DYNAMODB_TABLE_ASIENTOS: ${self:provider.environment.STAGE}_${self:provider.environment.DYNAMODB_TABLE_PREFIX_YUPANA}_asientos
@@ -80,6 +84,7 @@ provider:
             - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_PROFILES}"
             - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_RBACS}"
             - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_RBACS}/index/user_id-index"
+            - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_ROLES}"
 
             - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_CUENTAS_PROFILES}"
             - "arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.DYNAMODB_TABLE_CUENTAS_PROFILES}/index/profile_id-index"
